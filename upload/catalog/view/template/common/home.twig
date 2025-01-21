@@ -1,0 +1,31 @@
+{{ header }}
+
+<div id="common-home" class="container">
+
+  <div class="row">{{ column_left }}
+    <div id="content" class="col">{{ content_top }}
+    <div class="shop-product">
+{{ content_bottom }}</div>
+    {{ column_right }}</div>
+    
+</div>
+    <style>
+    @media (max-width:400px){
+      .mb-3{
+        max-width: 98%;
+      }
+      .mb-3 img{
+        min-width: 300px;
+      }
+      .shop-product h3{
+      margin: 2% 2% 2% 30%;
+    }
+    }
+
+    .product-thumb p{
+      display: none;
+    }
+    
+    </style>
+
+{{ footer }}

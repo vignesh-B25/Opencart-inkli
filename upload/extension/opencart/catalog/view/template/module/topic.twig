@@ -1,0 +1,42 @@
+<div class='container'>
+<div class="row" id='topics'>
+    {% for topic in topics %}
+    <a href="{{ topic.href }}" class="col{% if topic.topic_id == topic_id %} active{% endif %}" id="toimg">
+   <!-- <img src='/var/www/html/opencart/upload/extension/opencart/catalog/view/template/module/prd.png' alt='product'>-->
+    {# <img src='https://upload.wikimedia.org/wikipedia/commons/4/45/Shoemaker_1821.jpg' alt='product'> #}
+
+    
+    {{ topic.name }}
+     <img src='https://upload.wikimedia.org/wikipedia/commons/4/45/Shoemaker_1821.jpg' alt='product' style="max-width: 80%;"></a>
+  {% endfor %}
+   
+  <style>
+  #topics .col{
+    background: linear-gradient(90deg, #FA344F, #FF4A40, #FF9B55);
+    text-align: center;
+    margin: 5px;
+    min-height: 10vw;
+    /* font-size: 30px; */
+    color: black;
+font-family: 'Bebas Neue', cursive;
+  }
+/*     
+  }
+   #topics #toimg img{
+   padding: 4%;
+    min-width: 500px;
+   }
+   @media(max-width:540px){
+     #topics #toimg img{
+      max-width:10% !important;
+     }
+   } */
+     @media (max-width:400px){
+      #topic #toimg img{
+        max-width: 80% !important;
+      }
+     }
+  </style>
+</div>
+</div>
+

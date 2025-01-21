@@ -1,0 +1,45 @@
+<h3 id='special'>{{ heading_title }}</h3>
+<div class="row{% if axis == 'horizontal' %} row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4{% endif %}">
+  {% for product in products %}
+    <div class="col mb-3">{{ product }}</div>
+  {% endfor %}
+</div>
+    <!-- Include party.js for confetti -->
+   <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Select the element linked with your file
+        const targetElement = document.querySelector('#special'); // Replace with the actual ID or class
+
+        // Create an Intersection Observer
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        // Trigger confetti when the target element enters the viewport
+                        party.confetti(entry.target, {
+                            count: 200, // Number of particles
+                            spread: 200, // Spread angle
+                            size: 1, // Size of particles
+                        });
+                        // Optional: Disconnect observer to avoid retriggering
+                        observer.disconnect();
+                    }
+                });
+            },
+            {
+                root: null, // Observe relative to the viewport
+                threshold: 0.5, // Trigger when 50% of the element is visible
+            }
+        );
+
+        // Observe the target element
+        if (targetElement) {
+            observer.observe(targetElement);
+        } else {
+            console.warn('Target element not found!');
+        }
+    });
+</script>
+
+

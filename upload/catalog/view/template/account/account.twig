@@ -1,0 +1,60 @@
+{{ header }}
+<div id="account-account" class="container">
+  <ul class="breadcrumb">
+    {% for breadcrumb in breadcrumbs %}
+      <li class="breadcrumb-item"><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+       {% endfor %}
+  </ul>
+  {% if success %}
+    <div class="alert alert-success alert-dismissible"><i class="fa-solid fa-circle-check"></i> {{ success }}</div>
+  {% endif %}
+  <div class="row">
+  <h1>{{text_my_account}}</h1>
+  <div class="col-12 col-md-12  col-lg-3 text-center" id="profile" >
+      <img src='https://img.freepik.com/premium-photo/cartoon-man-with-glasses-beard-blue-shirt-generative-ai_958165-24562.jpg?w=826' alt='myprofile'  class="img-fluid rounded-circle mb-3">
+      <h3>Name:vicky</h3>
+      <h5>E-mail:vigneshbala2504@gmail.com</h5>
+      </div>{{ column_left }}
+    <div id="content" class="col-12 col-md-12 col-lg-8">{{ content_top }}
+      <ul class="list-unstyled">
+       <h2>Account</h2><hr>
+        <li><a href="{{ edit }}">{{ text_edit }}</a></li><hr>
+        <li><a href="{{ password }}">{{ text_password }}</a></li><hr>
+        <li><a href="{{ payment_method }}">{{ text_payment_method }}</a></li><hr>
+        <li><a href="{{ address }}">{{ text_address }}</a></li><hr>
+        <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li><hr>
+      </ul>
+      <ul class="list-unstyled">
+      <h2>{{ text_my_orders }}</h2><hr>
+        <li><a href="{{ order }}">{{ text_order }}</a></li><hr>
+        <li><a href="{{ subscription }}">{{ text_subscription }}</a></li><hr>
+        <li><a href="{{ download }}">{{ text_download }}</a></li><hr>
+        {% if reward %}
+          <li><a href="{{ reward }}">{{ text_reward }}</a></li><hr>
+        {% endif %}
+        <li><a href="{{ return }}">{{ text_return }}</a></li><hr>
+        <li><a href="{{ transaction }}">{{ text_transaction }}</a></li><hr>
+      </ul>
+      {% if affiliate %}
+        <ul class="list-unstyled">
+                <h2>{{ text_my_affiliate }}</h2><hr>
+
+          {% if not tracking %}
+            <li><a href="{{ affiliate }}">{{ text_affiliate_add }}</a></li><hr>
+          {% else %}
+            <li><a href="{{ affiliate }}">{{ text_affiliate_edit }}</a></li><hr>
+            <li><a href="{{ tracking }}">{{ text_tracking }}</a></li>
+          {% endif %}
+        </ul>
+      {% endif %}
+      <ul class="list-unstyled">
+            <h2>{{ text_my_newsletter }}</h2><hr>
+
+          <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li><hr>
+      </ul>
+      {{ content_bottom }}</div>
+      
+    </div>
+    {{ column_right }}</div><br><br>
+
+{{ footer }}

@@ -1,0 +1,49 @@
+
+<div class="contents">
+<p><strong>Nike Shoes</strong></p>
+<h1><stong>GET COMFORTABLE WITH WINNING</strong></h1>
+<p><strong>Win the world with us</strong></p>
+
+<button>Get Items</button>
+</div><h3>{{ heading_title }}</h3>
+<div id='prd'class="row{% if axis == 'horizontal' %} row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4{% endif %}">
+  {% for product in products %}
+    <div class="col mb-3" >{{ product }}
+    <style>
+    .product-thumb .button-group{
+      display: none;
+    }
+    #prd{
+      flex-wrap: nowrap;
+      min-height: max-content;
+      margin-bottom: 5px;
+      overflow: scroll;
+    }
+   
+    
+    .product-thumb {
+  /* min-width: 400px !important; */
+   
+}
+    .product-thumb:hover {
+      scale: 1;
+
+  z-index: none;
+    }
+
+.product-thumb .image {
+  min-width: 300px !important;
+  min-height: 200px !important;
+}
+.product-thumb .image img{
+  min-height: 200px ;
+  padding: 20px ;
+}
+.product-thumb h4{
+  color: black !important;
+}
+    </style>
+    </div>
+    
+  {% endfor %}
+</div>
