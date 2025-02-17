@@ -193,6 +193,28 @@ class ColumnLeft extends \Opencart\System\Engine\Controller {
 				];
 			}
 
+
+
+
+			// inklify customization 
+           if($this->user->hasPermission('access','cms/faq')){
+			$cms[]=[
+				'name'=>$this->language->get('text_faq'),
+				'href'=>$this->url->link('cms/faq','user_token='. $this->session->data['user_token']),
+				'children'=>[]
+			];
+		   }
+		   if($this->user->hasPermission('access','cms/faq_list')){
+			$cms[]=[
+				'name'=>$this->language->get('text_faq1'),
+				'href'=>$this->url->link('cms/faq_list','user_token='. $this->session->data['user_token']),
+				'children'=>[]
+			];
+		   }
+
+
+
+
 			if ($cms) {
 				$data['menus'][] = [
 					'id'       => 'menu-cms',

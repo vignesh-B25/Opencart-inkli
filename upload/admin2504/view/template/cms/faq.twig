@@ -1,0 +1,48 @@
+{{ header }}{{ column_left }}
+<div class="container">
+    <h1>{{ heading_title }}</h1>
+    <a href="{{ add }}" class="btn btn-primary">Add FAQ</a>
+    
+    <form id="form-faq" action="{{ delete }}" method="post">
+    
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th width="1" class="text-center">
+                        <input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" />
+                    </th>
+                    <th>Question</th>
+                    <th>Sort Order</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for faq in faqs %}
+                <tr>
+                    <td class="text-center">
+                        <input type="checkbox" name="selected[]" value="{{ faq.faq_id }}" />
+                    </td>
+                    <td>{{ faq.question }}</td>
+                    <td>{{ faq.sort_order }}</td>
+                    <td>{{ faq.status ? 'Enabled' : 'Disabled' }}</td>
+                    <td>
+                 <a href="{{ faq.edit }}" class="btn btn-secondary">Edit</a>
+
+                       
+                    </td>
+                </tr>
+               
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <button type="submit" class="btn btn-danger">
+            <i class="fa fa-trash"></i> Delete Selected
+        </button>
+    </form>
+</div>
+{{ footer }}

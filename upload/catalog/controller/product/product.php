@@ -238,6 +238,16 @@ class Product extends \Opencart\System\Engine\Controller {
 
 			$data['heading_title'] = $product_info['name'];
 
+
+			// inklidox customization
+			$data['img_title']= $product_info['img_title'];
+			$data['img_alt'] = $product_info['img_alt'];
+			$data['benefit1'] = $product_info['benefit_1'];
+			$data['benefit2'] = $product_info['benefit_2'];
+			$data['benefit3'] = $product_info['benefit_3'];
+			
+			// end here 
+
 			$data['text_minimum'] = sprintf($this->language->get('text_minimum'), $product_info['minimum']);
 			$data['text_login'] = sprintf($this->language->get('text_login'), $this->url->link('account/login', 'language=' . $this->config->get('config_language')), $this->url->link('account/register', 'language=' . $this->config->get('config_language')));
 			$data['text_reviews'] = sprintf($this->language->get('text_reviews'), (int)$product_info['reviews']);

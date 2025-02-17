@@ -180,7 +180,6 @@
 }
 *, *::before, *::after {
   box-sizing: border-box;
- 
 }
 @media (prefers-reduced-motion: no-preference) {
   :root {
@@ -6789,7 +6788,6 @@ textarea.form-control-lg {
 }
 .align-items-center {
   align-items: center !important;
-  
 }
 .align-items-baseline {
   align-items: baseline !important;
@@ -8975,7 +8973,6 @@ textarea.form-control-lg {
   }
   .d-lg-block {
     display: block !important;
-   
   }
   .d-lg-grid {
     display: grid !important;

@@ -1,4 +1,4 @@
-##
+ ##
 # READ THIS COMPLETELY IF YOU CHOOSE TO USE THIS FILE!
 #
 # 1.To use URL Alias you need to be running apache with mod_rewrite enabled.
@@ -17,7 +17,7 @@
 ## No directory listings
 <IfModule mod_autoindex.c>
   IndexIgnore *
-</IfModule>
+</IfModule>   
 
 ## No-Referrer-Header
 <IfModule mod_headers.c>

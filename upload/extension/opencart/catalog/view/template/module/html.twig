@@ -1,6 +1,26 @@
-<div>
+{# <div>
 	{% if heading_title %}
-		<h2>{{ heading_title }}</h2>
+	
+		<h2>{{ heading_title }}978897987879</h2>
 	{% endif %}
 	{{ html }}
+</div> #}
+<head>
+
+</head>
+
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+  {% if  heading_title %}
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" 
+	  aria-controls="flush-collapseOne">
+     {{heading_title}}
+      </button>
+    </h2>
+	{% endif %}
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">{{html}}</div>
+    </div>
+  </div>
 </div>

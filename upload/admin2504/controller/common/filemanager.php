@@ -75,18 +75,18 @@ class FileManager extends \Opencart\System\Engine\Controller {
 		}
 
 		$allowed = [
-			'.ico',
-			'.jpg',
-			'.jpeg',
-			'.png',
-			'.gif',
+			// '.ico',
+			// '.jpg',
+			// '.jpeg',
+			// '.png',
+			// '.gif',
 			'.webp',
 			'.svg',
-			'.JPG',
-			'.JPEG',
-			'.PNG',
-			'.GIF',
-			'.SVG'
+			// '.JPG',
+			// '.JPEG',
+			// '.PNG',
+			// '.GIF',
+			// '.SVG'
 		];
 
 		$data['directories'] = [];
@@ -322,12 +322,12 @@ class FileManager extends \Opencart\System\Engine\Controller {
 
 					// Allowed file mime types
 					$allowed = [
-						'image/x-icon',
-						'image/jpeg',
-						'image/pjpeg',
-						'image/png',
-						'image/x-png',
-						'image/gif',
+						// 'image/x-icon',
+						// 'image/jpeg',
+						// 'image/pjpeg',
+						// 'image/png',
+						// 'image/x-png',
+						// 'image/gif',
 						'image/webp',
 						'image/svg+xml'
 					];

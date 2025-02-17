@@ -20,13 +20,35 @@ class Product extends \Opencart\System\Engine\Model {
 	 * $product_id = $this->model_catalog_product->addProduct($data);
 	 */
 	public function addProduct(array $data): int {
-		$this->db->query("INSERT INTO `" . DB_PREFIX . "product` SET `master_id` = '" . (int)$data['master_id'] . "', `model` = '" . $this->db->escape((string)$data['model']) . "', `sku` = '" . $this->db->escape((string)$data['sku']) . "', `upc` = '" . $this->db->escape((string)$data['upc']) . "', `ean` = '" . $this->db->escape((string)$data['ean']) . "', `jan` = '" . $this->db->escape((string)$data['jan']) . "', `isbn` = '" . $this->db->escape((string)$data['isbn']) . "', `mpn` = '" . $this->db->escape((string)$data['mpn']) . "', `location` = '" . $this->db->escape((string)$data['location']) . "', `variant` = '" . $this->db->escape(!empty($data['variant']) ? json_encode($data['variant']) : '') . "', `override` = '" . $this->db->escape(!empty($data['override']) ? json_encode($data['override']) : '') . "', `quantity` = '" . (int)$data['quantity'] . "', `minimum` = '" . (int)$data['minimum'] . "', `subtract` = '" . (isset($data['subtract']) ? (bool)$data['subtract'] : 0) . "', `stock_status_id` = '" . (int)$data['stock_status_id'] . "', `date_available` = '" . $this->db->escape((string)$data['date_available']) . "', `manufacturer_id` = '" . (int)$data['manufacturer_id'] . "', `shipping` = '" . (isset($data['shipping']) ? (bool)$data['shipping'] : 0) . "', `price` = '" . (float)$data['price'] . "', `points` = '" . (int)$data['points'] . "', `weight` = '" . (float)$data['weight'] . "', `weight_class_id` = '" . (int)$data['weight_class_id'] . "', `length` = '" . (float)$data['length'] . "', `width` = '" . (float)$data['width'] . "', `height` = '" . (float)$data['height'] . "', `length_class_id` = '" . (int)$data['length_class_id'] . "', `status` = '" . (bool)($data['status'] ?? 0) . "', `tax_class_id` = '" . (int)$data['tax_class_id'] . "', `sort_order` = '" . (int)$data['sort_order'] . "', `date_added` = NOW(), `date_modified` = NOW()");
+		 
+		// inklify customize
+		// this is query code to store the data in the database
+		$this->db->query("INSERT INTO `" . DB_PREFIX . "product` SET `master_id` = '" . (int)$data['master_id'] . "',
+		 `model` = '" . $this->db->escape((string)$data['model']) . "', `sku` = '" . $this->db->escape((string)$data['sku']) . "', 
+		 `upc` = '" . $this->db->escape((string)$data['upc']) . "', `ean` = '" . $this->db->escape((string)$data['ean']) . "', 
+		 `jan` = '" . $this->db->escape((string)$data['jan']) . "', `isbn` = '" . $this->db->escape((string)$data['isbn']) . "',
+		  `mpn` = '" . $this->db->escape((string)$data['mpn']) . "', `location` = '" . $this->db->escape((string)$data['location']) . "',
+		   `variant` = '" . $this->db->escape(!empty($data['variant']) ? json_encode($data['variant']) : '') . "',
+		    `override` = '" . $this->db->escape(!empty($data['override']) ? json_encode($data['override']) : '') . "',
+			 `quantity` = '" . (int)$data['quantity'] . "', `minimum` = '" . (int)$data['minimum'] . "',
+			  `subtract` = '" . (isset($data['subtract']) ? (bool)$data['subtract'] : 0) . "', `stock_status_id` = '" . (int)$data['stock_status_id'] . "', 
+			  `date_available` = '" . $this->db->escape((string)$data['date_available']) . "', `manufacturer_id` = '" . (int)$data['manufacturer_id'] . "',
+			   `shipping` = '" . (isset($data['shipping']) ? (bool)$data['shipping'] : 0) . "', `price` = '" . (float)$data['price'] . "', 
+			   `points` = '" . (int)$data['points'] . "', `weight` = '" . (float)$data['weight'] . "', 
+			   `weight_class_id` = '" . (int)$data['weight_class_id'] . "', `length` = '" . (float)$data['length'] . "',
+			    `width` = '" . (float)$data['width'] . "', `height` = '" . (float)$data['height'] . "',
+				 `length_class_id` = '" . (int)$data['length_class_id'] . "', `status` = '" . (bool)($data['status'] ?? 0) . "',
+				 `tax_class_id` = '" . (int)$data['tax_class_id'] . "', `sort_order` = '" . (int)$data['sort_order'] . "', `date_added` = NOW(),
+				  `date_modified` = NOW()");
 
 		$product_id = $this->db->getLastId();
 
 		if ($data['image']) {
-			$this->db->query("UPDATE `" . DB_PREFIX . "product` SET `image` = '" . $this->db->escape((string)$data['image']) . "' WHERE `product_id` = '" . (int)$product_id . "'");
+			$this->db->query("UPDATE `" . DB_PREFIX . "product` SET 
+			`image` = '" . $this->db->escape((string)$data['image']) . "' WHERE `product_id` = '" . (int)$product_id . "'");
 		}
+
+
 
 		// Description
 		foreach ($data['product_description'] as $language_id => $value) {
@@ -145,6 +167,55 @@ class Product extends \Opencart\System\Engine\Model {
 
 		return $product_id;
 	}
+
+
+
+
+
+	
+		// inklidox customization for tap system 
+	public function addProductTap($data) {
+		$this->db->query("INSERT INTO `" . DB_PREFIX . "product` SET 
+			`image` = '" . $this->db->escape($data['image']) . "'");
+	
+		$product_id = $this->db->getLastId();
+	
+		if (!empty($data['tap']) || !empty($data['tap_detail']) || !empty($data['image_tap'])) {
+			$this->db->query("INSERT INTO `" . DB_PREFIX . "product_tap` SET 
+				`product_id` = '" . (int)$product_id . "',
+				`tap` = '" . $this->db->escape($data['tap']) . "',
+				`tap_detail` = '" . $this->db->escape($data['tap_detail']) . "',
+				`image` = '" . $this->db->escape($data['image_tap']) . "'");
+		}
+	
+		return $product_id;
+	}
+	
+	public function editProductTap($product_id, $data) {
+		$this->db->query("UPDATE `" . DB_PREFIX . "product` SET 
+			`image` = '" . $this->db->escape($data['image']) . "' 
+			WHERE `product_id` = '" . (int)$product_id . "'");
+	
+		$this->db->query("DELETE FROM `" . DB_PREFIX . "product_tap` WHERE `product_id` = '" . (int)$product_id . "'");
+	
+		if (!empty($data['tap']) || !empty($data['tap_detail']) || !empty($data['image_tap'])) {
+			$this->db->query("INSERT INTO `" . DB_PREFIX . "product_tap` SET 
+				`product_id` = '" . (int)$product_id . "',
+				`tap` = '" . $this->db->escape($data['tap']) . "',
+				`tap_detail` = '" . $this->db->escape($data['tap_detail']) . "',
+				`image` = '" . $this->db->escape($data['image_tap']) . "'");
+		}
+	}
+
+	
+
+		
+		public function getProductTap($product_id) {
+			$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "product_tap` WHERE `product_id` = '" . (int)$product_id . "'");
+			return $query->row;
+		}
+		// end here 
+	
 
 	/**
 	 * Edit Product
@@ -855,7 +926,9 @@ class Product extends \Opencart\System\Engine\Model {
 	public function getProduct(int $product_id): array {
 		$product_data = [];
 
-		$query = $this->db->query("SELECT DISTINCT * FROM `" . DB_PREFIX . "product` `p` LEFT JOIN `" . DB_PREFIX . "product_description` `pd` ON (`p`.`product_id` = `pd`.`product_id`) WHERE `p`.`product_id` = '" . (int)$product_id . "' AND `pd`.`language_id` = '" . (int)$this->config->get('config_language_id') . "'");
+		$query = $this->db->query("SELECT DISTINCT * FROM `" . DB_PREFIX . "product` `p` LEFT JOIN `" 
+		. DB_PREFIX . "product_description` `pd` ON (`p`.`product_id` = `pd`.`product_id`) WHERE `p`.
+		`product_id` = '" . (int)$product_id . "' AND `pd`.`language_id` = '" . (int)$this->config->get('config_language_id') . "'");
 
 		if ($query->num_rows) {
 			$product_data = $query->row;
@@ -1127,9 +1200,77 @@ class Product extends \Opencart\System\Engine\Model {
 	 *
 	 * $this->model_catalog_product->addDescription($product_id, $language_id, $value);
 	 */
+
+	 	// inklidox customization 
+		// here the product image alt and title value are stored at the end of the line 
 	public function addDescription(int $product_id, int $language_id, array $data): void {
-		$this->db->query("INSERT INTO `" . DB_PREFIX . "product_description` SET `product_id` = '" . (int)$product_id . "', `language_id` = '" . (int)$language_id . "', `name` = '" . $this->db->escape($data['name']) . "', `description` = '" . $this->db->escape($data['description']) . "', `tag` = '" . $this->db->escape($data['tag']) . "', `meta_title` = '" . $this->db->escape($data['meta_title']) . "', `meta_description` = '" . $this->db->escape($data['meta_description']) . "', `meta_keyword` = '" . $this->db->escape($data['meta_keyword']) . "'");
+		$this->db->query("INSERT INTO `" . DB_PREFIX . "product_description` SET `product_id` = '" . (int)$product_id . "', 
+		`language_id` = '" . (int)$language_id . "', `name` = '" . $this->db->escape($data['name']) . "', `description` = '" 
+		. $this->db->escape($data['description']) . "', `tag` = '" . $this->db->escape($data['tag']) . "', `meta_title` = '" 
+		. $this->db->escape($data['meta_title']) . "', `meta_description` = '" . $this->db->escape($data['meta_description']) . "', 
+		`meta_keyword` = '" . $this->db->escape($data['meta_keyword']) . "', `img_alt`='" . $this->db->escape($data['img_alt']) . "',
+		`img_title` = '" . $this->db->escape($data['img_title']) . "',`benefit_1` = '" . $this->db->escape($data['benefit_1']) . "',
+		`benefit_2` = '" . $this->db->escape($data['benefit_2']) . "', `benefit_3` = '" . $this->db->escape($data['benefit_3']) . "' ");                   
+		
+		
+		
 	}
+
+
+//   code for tap system to fetch 
+
+public function getTapSystem(int $product_id): array {
+    $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "product_taps` WHERE `product_id` = '" . (int)$product_id . "'");
+    return $query->rows; // Return an array of taps
+}
+
+	
+
+	
+public function saveTaps($product_id, $taps) {
+    // First, delete existing taps for this product (to prevent duplicates)
+    $this->db->query("DELETE FROM " . DB_PREFIX . "product_taps WHERE product_id = '" . (int)$product_id . "'");
+
+    // Insert new taps
+    foreach ($taps as $tap) {
+        $this->db->query("INSERT INTO `" . DB_PREFIX . "product_taps` SET 
+            `product_id` = '" . (int)$product_id . "',
+            `tap_title` = '" . $this->db->escape($tap['tap_title']) . "',
+            `tap_img` = '" . $this->db->escape($tap['tap_img'] ?? '') . "',
+            `tap_description` = '" . $this->db->escape($tap['tap_description']) . "',
+            `sort_order` = '0'
+        ");
+    }
+}
+
+
+
+
+
+
+	
+
+
+
+	
+	// here the end 
+
+// Store the global script (only one row will exist)
+public function addGlobalScript(string $script): void {
+    $this->db->query("INSERT INTO `" . DB_PREFIX . "global_script` (`id`, `script`) 
+                      VALUES (1, '" . $this->db->escape($script) . "') 
+                      ON DUPLICATE KEY UPDATE `script` = '" . $this->db->escape($script) . "'");
+}
+
+
+
+// Retrieve the global script (single row)
+public function getGlobalScript(): string {
+    $query = $this->db->query("SELECT `script` FROM `" . DB_PREFIX . "global_script` WHERE `id` = 1 LIMIT 1");
+
+    return $query->num_rows ? $query->row['script'] : '';
+}
+
 
 	/**
 	 * Delete Descriptions

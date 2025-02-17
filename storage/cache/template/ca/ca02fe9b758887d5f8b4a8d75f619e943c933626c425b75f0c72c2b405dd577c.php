@@ -46,12 +46,12 @@ class __TwigTemplate_09d5ed621051a072813689f76cf25700af61c4cb45463bcb5b81918e538
         yield "</button></h2>
   <div id=\"collapse-shipping\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordion\">
     <div class=\"accordion-body\">
-      <form id=\"form-quote\">
+      <form id=\"form-quote\" class=\"col-6\">
         <p>";
         // line 6
         yield ($context["text_destination"] ?? null);
         yield "</p>
-        <h2>hiii</h2>
+       
         <div class=\"row mb-3 required\">
           <label for=\"input-country\" class=\"col-md-4 col-form-label\">";
         // line 9
@@ -366,9 +366,9 @@ class __TwigTemplate_09d5ed621051a072813689f76cf25700af61c4cb45463bcb5b81918e538
   <h2 class=\"accordion-header\"><button type=\"button\" class=\"accordion-button collapsed\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapse-shipping\">{{ heading_title }}</button></h2>
   <div id=\"collapse-shipping\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordion\">
     <div class=\"accordion-body\">
-      <form id=\"form-quote\">
+      <form id=\"form-quote\" class=\"col-6\">
         <p>{{ text_destination }}</p>
-        <h2>hiii</h2>
+       
         <div class=\"row mb-3 required\">
           <label for=\"input-country\" class=\"col-md-4 col-form-label\">{{ entry_country }}</label>
           <div class=\"col-md-8\">

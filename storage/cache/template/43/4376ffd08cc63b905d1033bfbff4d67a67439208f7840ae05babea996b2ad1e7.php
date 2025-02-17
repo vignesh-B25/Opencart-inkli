@@ -138,8 +138,9 @@ class __TwigTemplate_8f58118d5538475a7789eb9ca349c989b5dc9c23300add726e38512867c
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 32
         yield "  </div>
+
   ";
-        // line 33
+        // line 34
         yield ($context["security"] ?? null);
         yield "
 </div>
@@ -147,7 +148,7 @@ class __TwigTemplate_8f58118d5538475a7789eb9ca349c989b5dc9c23300add726e38512867c
 \$('#button-setting').on('click', function() {
     \$.ajax({
         url: 'index.php?route=common/developer&user_token=";
-        // line 38
+        // line 39
         yield ($context["user_token"] ?? null);
         yield "',
         dataType: 'html',
@@ -171,7 +172,7 @@ class __TwigTemplate_8f58118d5538475a7789eb9ca349c989b5dc9c23300add726e38512867c
 });
 //--></script>
 ";
-        // line 59
+        // line 60
         yield ($context["footer"] ?? null);
         return; yield '';
     }
@@ -197,7 +198,7 @@ class __TwigTemplate_8f58118d5538475a7789eb9ca349c989b5dc9c23300add726e38512867c
      */
     public function getDebugInfo(): array
     {
-        return array (  175 => 59,  151 => 38,  143 => 33,  140 => 32,  133 => 30,  122 => 28,  116 => 27,  113 => 26,  110 => 25,  107 => 24,  102 => 23,  99 => 22,  95 => 21,  92 => 20,  88 => 19,  82 => 15,  71 => 13,  67 => 12,  61 => 10,  55 => 7,  52 => 6,  50 => 5,  42 => 1,);
+        return array (  176 => 60,  152 => 39,  144 => 34,  140 => 32,  133 => 30,  122 => 28,  116 => 27,  113 => 26,  110 => 25,  107 => 24,  102 => 23,  99 => 22,  95 => 21,  92 => 20,  88 => 19,  82 => 15,  71 => 13,  67 => 12,  61 => 10,  55 => 7,  52 => 6,  50 => 5,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -234,6 +235,7 @@ class __TwigTemplate_8f58118d5538475a7789eb9ca349c989b5dc9c23300add726e38512867c
       </div>
     {% endfor %}
   </div>
+
   {{ security }}
 </div>
 <script type=\"text/javascript\"><!--

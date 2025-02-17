@@ -129,6 +129,7 @@ var chain = new Chain();
 
 // Forms
 $(document).on('submit', 'form', function(e) {
+    
     var element = this;
     var button = (e.originalEvent !== undefined && e.originalEvent.submitter !== undefined) ? e.originalEvent.submitter : '';
 
@@ -142,11 +143,12 @@ $(document).on('submit', 'form', function(e) {
 
         console.log(e);
         console.log(element);
-        console.log('action ' + action);
+        console.log('action' + action);
         console.log('button ' + button);
         console.log('method ' + method);
         console.log('enctype ' + enctype);
         console.log($(element).serialize());
+       
 
         // https://github.com/opencart/opencart/issues/9690
         if (typeof CKEDITOR != 'undefined') {
@@ -160,6 +162,7 @@ $(document).on('submit', 'form', function(e) {
             type: method,
             data: $(form).serialize(),
             dataType: 'json',
+          
             contentType: enctype,
             beforeSend: function() {
                 $(button).button('loading');
@@ -170,7 +173,7 @@ $(document).on('submit', 'form', function(e) {
             success: function(json, textStatus) {
                 console.log(json);
                 console.log(textStatus);
-
+              
                 $('.alert-dismissible').remove();
                 $(element).find('.is-invalid').removeClass('is-invalid');
                 $(element).find('.invalid-feedback').removeClass('d-block');
@@ -196,7 +199,7 @@ $(document).on('submit', 'form', function(e) {
 
                 if (json['success']) {
                     $('#alert').prepend('<div class="alert alert-success alert-dismissible"><i class="fa-solid fa-circle-check"></i> ' + json['success'] + ' <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
-
+       
                     // Refresh
                     var url = $(form).attr('data-oc-load');
                     var target = $(form).attr('data-oc-target');
@@ -209,6 +212,8 @@ $(document).on('submit', 'form', function(e) {
                 // Replace any form values that correspond to form names.
                 for (key in json) {
                     $(element).find('[name=\'' + key + '\']').val(json[key]);
+               
+
                 }
             },
             error: function(xhr, ajaxOptions, thrownError) {
@@ -268,6 +273,7 @@ $(document).on('click', '[data-oc-toggle=\'upload\']', function() {
 
                         if (json['success']) {
                             alert(json['success']);
+                            
                         }
 
                         if (json['code']) {
@@ -499,7 +505,7 @@ $(document).ready(function() {
             success: function(json) {
                 console.log($(element).attr('href'));
                 console.log($('input-redirect').val());
-
+           
                 if (json['redirect']) {
                     location = json['redirect'];
                 }

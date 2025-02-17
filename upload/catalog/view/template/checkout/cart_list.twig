@@ -14,7 +14,7 @@
    
   <h1>{{ heading_title }}{% if weight %} ({{ weight }}){% endif %}</h1>
   <div class="container">
-  <div id="cart" class="row table-responsive">
+  <div id="cart" class="row d-flex table-responsive">
   
     <table class="col-4 table table-bordered">
       <thead>
@@ -27,7 +27,7 @@
           
         </tr>
       </thead>
-      <tbody>
+      
         {% for product in products %}
           {# <tr> #}
           
@@ -72,7 +72,7 @@
             <td class="text-end">{{ product.total }}</td> #}
           {# </tr> #}
         {% endfor %}
-      </tbody>
+   
       <tfoot   id="checkout-total">
         {% for total in totals %}
           <tr>
@@ -81,7 +81,7 @@
           </tr>
         {% endfor %}
       {# -----------------------design product  #}
-    <div class='col-12 d-flex' id="cartprd">
+    <div class='col-8 d-flex' id="cartprd">
      {% for product in products %}
     <div class='col-md-4 col-sm-12 col-lg-3 text-center' id="prdcrd">
 

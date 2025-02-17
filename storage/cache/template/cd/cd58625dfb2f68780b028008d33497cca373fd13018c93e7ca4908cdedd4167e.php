@@ -48,7 +48,7 @@ class __TwigTemplate_581d49b79723f8c3f6aecec7deef494758f4897d23666e6818660a5d371
         yield "\" alt=\"";
         yield ($context["name"] ?? null);
         yield "\" title=\"";
-        yield ($context["name"] ?? null);
+        yield ($context["img_tilte"] ?? null);
         yield "\" class=\"img-fluid\"/></a></div>
   <div class=\"content\">
     <div class=\"description\">
@@ -195,7 +195,7 @@ class __TwigTemplate_581d49b79723f8c3f6aecec7deef494758f4897d23666e6818660a5d371
     public function getSourceContext(): Source
     {
         return new Source("<div class=\"product-thumb\">
-  <div class=\"image\"><a href=\"{{ href }}\"><img src=\"{{ thumb }}\" alt=\"{{ name }}\" title=\"{{ name }}\" class=\"img-fluid\"/></a></div>
+  <div class=\"image\"><a href=\"{{ href }}\"><img src=\"{{ thumb }}\" alt=\"{{ name }}\" title=\"{{ img_tilte }}\" class=\"img-fluid\"/></a></div>
   <div class=\"content\">
     <div class=\"description\">
       <h4><a href=\"{{ href }}\">{{ name }}</a></h4>

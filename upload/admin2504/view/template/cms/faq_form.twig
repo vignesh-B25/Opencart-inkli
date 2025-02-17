@@ -1,0 +1,40 @@
+{{ header }}{{ column_left }}
+<form id="form-faq" action="{{ save }}" method="post" data-oc-toggle="ajax">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ heading_title }}</h3>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="input-question" class="form-label">{{ entry_question }}</label>
+                <input type="text" name="question" value="{{ faq.question is defined ? faq.question : '' }}" placeholder="{{ entry_question }}" id="input-question" class="form-control" />
+            </div>
+            
+            <div class="mb-3">
+                <label for="input-answer" class="form-label">{{ entry_answer }}</label>
+                <textarea name="answer" placeholder="{{ entry_answer }}" id="input-answer" class="form-control" rows="5">{{ faq.answer is defined ? faq.answer : '' }}</textarea>
+            </div>
+
+            <!-- Sort Order field -->
+            <div class="mb-3">
+                <label for="input-sort-order" class="form-label">{{ entry_sort_order }}</label>
+                <input type="number" name="sort_order" value="{{ faq.sort_order is defined ? faq.sort_order : 0 }}" id="input-sort-order" class="form-control" />
+            </div>
+
+            <!-- Status field -->
+            <div class="mb-3">
+                <label for="input-status" class="form-label">{{ entry_status }}</label>
+                <select name="status" id="input-status" class="form-control">
+                    <option value="1" {{ faq.status is defined and faq.status == 1 ? 'selected' : '' }}>{{ text_enabled }}</option>
+                    <option value="0" {{ faq.status is defined and faq.status == 0 ? 'selected' : '' }}>{{ text_disabled }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="card-footer text-end">
+            <input type="hidden" name="faq_id" value="{{ faq.faq_id is defined ? faq.faq_id : '' }}" />
+            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> {{ button_save }}</button>
+            <a href="{{ back }}" class="btn btn-secondary"><i class="fa fa-reply"></i> {{ button_cancel }}</a>
+        </div>
+    </div>
+</form>
+{{ footer }}

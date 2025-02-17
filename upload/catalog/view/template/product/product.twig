@@ -13,15 +13,18 @@
           <div class="col-sm">
             <div class="image magnific-popup">
               {% if thumb %}
+              {# this is for product image #}
                 <a href="{{ popup }}" title="{{ heading_title }}">
-                <img src="{{ thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" class="img-thumbnail mb-3"/></a>
+                <img src="{{ thumb }}" title="{{ img_title }}" alt="{{ img_alt}}" class="img-thumbnail mb-3"/></a>
               {% endif %}
+              {# this is if no image is uploaded  #}
               {% if images %}
                 <div>
                   {% for image in images %}
                     <a href="{{ image.popup }}" title="{{ heading_title }}">
-                    <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" class="img-thumbnail"/></a>&nbsp;
+                    <img src="{{ image.thumb }}" title="{{ img_title }}" alt="{{ img_alt }}" class="img-thumbnail"/></a>&nbsp;
                   {% endfor %}
+              
                 </div>
               {% endif %}
             </div>
@@ -234,6 +237,23 @@
           </div>
         </div>
       </div>
+
+      {# benefit fields  here #}
+      <div class="row text-center " id="benefits">
+      <div class="col-4">
+        <h1>{{benefit1}}</h1>
+      </div>
+
+    <div class="col-4">
+        <h1>{{benefit2}}</h1>
+      </div>
+          <div class="col-4">
+        <h1>{{benefit3}}</h1>
+      </div>
+
+
+      
+
       <ul class="nav nav-tabs">
         <li class="nav-item"><a href="#tab-description" data-bs-toggle="tab" class="nav-link active">{{ tab_description }}</a></li>
         {% if attribute_groups %}
@@ -279,6 +299,8 @@
         {% if review_status %}
           <div id="tab-review" class="tab-pane fade mb-4">{{ review }}</div>
         {% endif %}
+ 
+      
       </div>
       {{ related }}
       {{ content_bottom }}

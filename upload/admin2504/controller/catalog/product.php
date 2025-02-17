@@ -1,5 +1,7 @@
 <?php
 namespace Opencart\Admin\Controller\Catalog;
+
+
 /**
  * Class Product
  *
@@ -186,6 +188,14 @@ class Product extends \Opencart\System\Engine\Controller {
 
 		$this->response->setOutput($this->load->view('catalog/product', $data));
 	}
+
+
+
+
+
+
+
+
 
 	/**
 	 * List
@@ -428,7 +438,7 @@ class Product extends \Opencart\System\Engine\Controller {
 		if (isset($this->request->get['filter_model'])) {
 			$url .= '&filter_model=' . urlencode(html_entity_decode($this->request->get['filter_model'], ENT_QUOTES, 'UTF-8'));
 		}
-
+		
 		if (isset($this->request->get['filter_category_id'])) {
 			$url .= '&filter_category_id=' . $this->request->get['filter_category_id'];
 		}
@@ -633,6 +643,7 @@ class Product extends \Opencart\System\Engine\Controller {
 
 		if (isset($this->request->get['product_id'])) {
 			$data['product_id'] = (int)$this->request->get['product_id'];
+			
 		} else {
 			$data['product_id'] = 0;
 		}
@@ -1170,6 +1181,12 @@ class Product extends \Opencart\System\Engine\Controller {
 		$this->response->setOutput($this->load->view('catalog/product_form', $data));
 	}
 
+
+	
+	
+
+
+
 	/**
 	 * Save
 	 *
@@ -1180,14 +1197,90 @@ class Product extends \Opencart\System\Engine\Controller {
 
 		$json = [];
 
+
+    //    tap system customizartion (updated version )
+
+		
+        // ✅ Validate 'tap' input
+     
 		if (!$this->user->hasPermission('modify', 'catalog/product')) {
 			$json['error']['warning'] = $this->language->get('error_permission');
 		}
+		if (!isset($this->request->post['tap']) || mb_strlen($this->request->post['tap']) < 3 || mb_strlen($this->request->post['tap']) > 255) {
+            $json['error']['tap'] = 'Title must be between 3 and 255 characters!';
+        }
+
+        // ✅ Validate 'tap_detail' input
+        if (!isset($this->request->post['tap_detail']) || mb_strlen($this->request->post['tap_detail']) < 5) {
+            $json['error']['tap_detail'] = 'Detail must be at least 5 characters!';
+        }
 
 		foreach ($this->request->post['product_description'] as $language_id => $value) {
 			if (!oc_validate_length($value['name'], 1, 255)) {
 				$json['error']['name_' . $language_id] = $this->language->get('error_name');
 			}
+
+			
+            // inklidox customization to validate alt and title field 
+			if(!oc_validate_length($value['img_alt'], 1, 255)){
+				$json['error']['img_alt_'.$language_id]= $this->language->get('error_img_alt');
+			}
+			if(!oc_validate_length($value['img_title'], 1, 255)){
+				$json['error']['img_title_' . $language_id]= $this->language->get('error_img_title');
+			}
+			
+
+
+
+			// adding benefit fields 
+               
+			if(!oc_validate_length($value['benefit_1'],1, 2000)){
+				$json['error']['benefit_1_'. $language_id]= $this->language->get('error_benefit_1');
+			}
+			if(!oc_validate_length($value['benefit_2'], 1,2000)){
+				$json['error']['benefit_2_'. $language_id]= $this->language->get('error_benefit_2');
+			}
+			if(!oc_validate_length($value['benefit_3'], 1,2000)){
+				$json['error']['benefit_3_'. $language_id]= $this->language->get('error_benefit_3');
+			}
+
+
+
+// end here
+
+
+
+
+
+            // save and retrive the global script 
+   
+			if ($this->request->server['REQUEST_METHOD'] == 'POST' && isset($this->request->post['global_script'])) {
+				$this->load->model('catalog/product');
+				$this->model_catalog_product->addGlobalScript($this->request->post['global_script']);
+			}
+			
+			// Load the script into the view
+			$data['global_script'] = $this->model_catalog_product->getGlobalScript();
+			
+
+
+			// adding script 
+			// if(!oc_validate_length($value['custom_script'], 1, 355)){
+			// 	$json['error']['custom_script_' . $language_id]= $this->language->get('error_custom_script');
+			// }
+			// this is the end 
+                 
+
+			if ($this->request->server['REQUEST_METHOD'] == 'POST' && isset($this->request->post['tap'])) {
+				$this->load->model('catalog/product');
+				$this->model_catalog_product->addGlobalScript($this->request->post['global_script']);
+			}
+
+
+
+
+
+
 
 			if (!oc_validate_length($value['meta_title'], 1, 255)) {
 				$json['error']['meta_title_' . $language_id] = $this->language->get('error_meta_title');
@@ -1241,6 +1334,8 @@ class Product extends \Opencart\System\Engine\Controller {
 				if (!$this->request->post['master_id']) {
 					// Normal product add
 					$json['product_id'] = $this->model_catalog_product->addProduct($this->request->post);
+					$this->model_catalog_product->addProductTap( $this->request->post);
+
 				} else {
 					// Variant product add
 					$json['product_id'] = $this->model_catalog_product->addVariant($this->request->post['master_id'], $this->request->post);
@@ -1249,6 +1344,7 @@ class Product extends \Opencart\System\Engine\Controller {
 				if (!$this->request->post['master_id']) {
 					// Normal product edit
 					$this->model_catalog_product->editProduct($this->request->post['product_id'], $this->request->post);
+					$this->model_catalog_product->editProductTap($this->request->post['product_id'], $this->request->post);
 				} else {
 					// Variant product edit
 					$this->model_catalog_product->editVariant($this->request->post['master_id'], $this->request->post['product_id'], $this->request->post);
@@ -1258,12 +1354,88 @@ class Product extends \Opencart\System\Engine\Controller {
 				$this->model_catalog_product->editVariants($this->request->post['product_id'], $this->request->post);
 			}
 
+
+
+
+			
+			
 			$json['success'] = $this->language->get('text_success');
 		}
-
+           
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+
+		
 	}
+
+	// tap system 
+
+	public function getForm(): void {
+		$this->load->model('catalog/product');
+		$this->load->model('tool/image'); // Load the image model
+		$product_info = $this->model_catalog_product->getProduct($product_id);
+		$product_tap_info = $this->model_catalog_product->getProductTap($product_id);
+
+
+		if (isset($this->request->get['product_id'])) {
+			$product_id = (int)$this->request->get['product_id'];
+		} else {
+			$product_id = 0;
+		}
+	
+		$product_tap_info = $this->model_catalog_product->getProductTap($product_id);
+	
+		if (!empty($product_tap_info['image']) && is_file(DIR_IMAGE . $product_tap_info['image'])) {
+			$data['image_tap_thumb'] = $this->model_tool_image->resize($product_tap_info['image'], 100, 100);
+		} else {
+			$data['image_tap_thumb'] = $this->model_tool_image->resize('no_image.png', 100, 100);
+		}
+	
+		$data['image_tap'] = !empty($product_tap_info['image']) ? $product_tap_info['image'] : '';
+
+
+
+
+if (isset($this->request->post['tap'])) {
+    $data['tap'] = $this->request->post['tap'];
+} elseif (!empty($product_tap_info)) {
+    $data['tap'] = $product_tap_info['tap'];
+} else {
+    $data['tap'] = 'hiiii';
+}
+
+
+// 			$data['product_description'] = $this->model_catalog_product->getDescriptions($product_id);
+
+if (isset($this->request->post['tap_detail'])) {
+    $data['tap_detail'] = $this->request->post['tap_detail'];
+} elseif (!empty($product_tap_info)) {
+    $data['tap_detail'] = $product_tap_info['tap_detail'];
+} else {
+    $data['tap_detail'] = '';
+}
+
+if (isset($this->request->post['image_tap'])) {
+    $data['image_tap'] = $this->request->post['image_tap'];
+} elseif (!empty($product_tap_info)) {
+    $data['image_tap'] = $product_tap_info['image'];
+} else {
+    $data['image_tap'] = '';
+}
+
+var_dump($data['tap']);
+exit();
+		$this->response->setOutput($this->load->view('catalog/product_form', $data));
+		
+	}
+	
+	
+
+
+
+	
+	
+	
 
 	/**
 	 * Delete

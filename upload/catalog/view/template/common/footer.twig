@@ -1,4 +1,30 @@
 </main>
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+    let breadcrumbs = document.querySelectorAll(".breadcrumb-item a"); // Select breadcrumb links
+    if (breadcrumbs.length === 0) return; // Exit if no breadcrumbs exist
+
+    let breadcrumbList = [];
+    breadcrumbs.forEach((breadcrumb, index) => {
+        breadcrumbList.push({
+            "@type": "ListItem",
+            "position": index + 1,
+            "name": breadcrumb.textContent.trim(),
+            "item": breadcrumb.href
+        });
+    });
+
+    let jsonLdScript = document.createElement("script");
+    jsonLdScript.type = "application/ld+json";
+    jsonLdScript.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbList
+    });
+
+    document.head.appendChild(jsonLdScript); // Append JSON-LD script to <head>
+});
+</script>
 <footer>
   <div class="container">
     <div class="row">

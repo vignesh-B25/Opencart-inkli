@@ -58,104 +58,125 @@ class __TwigTemplate_e60b09d2d3c631ab2c109c0c47b771d91b35d5aec311c61918ac3c9034b
         // line 8
         yield ($context["base"] ?? null);
         yield "\"/>
+  
+
+
+
+
+
+
+
+
   ";
-        // line 9
+        // line 18
         if (($context["description"] ?? null)) {
-            // line 10
+            // line 19
             yield "    <meta name=\"description\" content=\"";
             yield ($context["description"] ?? null);
             yield "\"/>
   ";
         }
-        // line 12
+        // line 21
         yield "  ";
         if (($context["keywords"] ?? null)) {
-            // line 13
+            // line 22
             yield "    <meta name=\"keywords\" content=\"";
             yield ($context["keywords"] ?? null);
             yield "\"/>
   ";
         }
-        // line 15
+        // line 24
+        yield "  ";
+        if (($context["global_script"] ?? null)) {
+            // line 25
+            yield "  <script>";
+            yield ($context["global_script"] ?? null);
+            yield "</script>
+  ";
+        }
+        // line 27
         yield "  <script src=\"";
         yield ($context["jquery"] ?? null);
         yield "\" type=\"text/javascript\"></script>
   <link href=\"";
-        // line 16
+        // line 28
         yield ($context["bootstrap"] ?? null);
         yield "\" type=\"text/css\" rel=\"stylesheet\" media=\"screen\"/>
   <link href=\"";
-        // line 17
+        // line 29
         yield ($context["icons"] ?? null);
         yield "\" rel=\"stylesheet\" type=\"text/css\"/>
   <link href=\"";
-        // line 18
+        // line 30
         yield ($context["stylesheet"] ?? null);
         yield "\" type=\"text/css\" rel=\"stylesheet\"/>
   <script src=\"catalog/view/javascript/common.js\" type=\"text/javascript\"></script>
   ";
-        // line 20
+        // line 32
         if (($context["icon"] ?? null)) {
-            // line 21
+            // line 33
             yield "    <link rel=\"icon\" href=\"";
             yield ($context["icon"] ?? null);
             yield "\" type=\"image/png\">
   ";
         }
-        // line 23
-        yield "  ";
+        // line 35
+        yield "  
+
+  ";
+        // line 37
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable(($context["styles"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["style"]) {
-            // line 24
+            // line 38
             yield "    <link href=\"";
-            yield CoreExtension::getAttribute($this->env, $this->source, $context["style"], "href", [], "any", false, false, false, 24);
+            yield CoreExtension::getAttribute($this->env, $this->source, $context["style"], "href", [], "any", false, false, false, 38);
             yield "\" type=\"text/css\" rel=\"";
-            yield CoreExtension::getAttribute($this->env, $this->source, $context["style"], "rel", [], "any", false, false, false, 24);
+            yield CoreExtension::getAttribute($this->env, $this->source, $context["style"], "rel", [], "any", false, false, false, 38);
             yield "\" media=\"";
-            yield CoreExtension::getAttribute($this->env, $this->source, $context["style"], "media", [], "any", false, false, false, 24);
+            yield CoreExtension::getAttribute($this->env, $this->source, $context["style"], "media", [], "any", false, false, false, 38);
             yield "\"/>
   ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['style'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
+        // line 40
         yield "  ";
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable(($context["scripts"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["script"]) {
-            // line 27
+            // line 41
             yield "    <script src=\"";
-            yield CoreExtension::getAttribute($this->env, $this->source, $context["script"], "href", [], "any", false, false, false, 27);
+            yield CoreExtension::getAttribute($this->env, $this->source, $context["script"], "href", [], "any", false, false, false, 41);
             yield "\" type=\"text/javascript\"></script>
   ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['script'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 43
         yield "  ";
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable(($context["links"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["link"]) {
-            // line 30
+            // line 44
             yield "    <link href=\"";
-            yield CoreExtension::getAttribute($this->env, $this->source, $context["link"], "href", [], "any", false, false, false, 30);
+            yield CoreExtension::getAttribute($this->env, $this->source, $context["link"], "href", [], "any", false, false, false, 44);
             yield "\" rel=\"";
-            yield CoreExtension::getAttribute($this->env, $this->source, $context["link"], "rel", [], "any", false, false, false, 30);
+            yield CoreExtension::getAttribute($this->env, $this->source, $context["link"], "rel", [], "any", false, false, false, 44);
             yield "\"/>
   ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['link'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 46
         yield "  ";
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable(($context["analytics"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["analytic"]) {
-            // line 33
+            // line 47
             yield "    ";
             yield $context["analytic"];
             yield "
@@ -164,28 +185,38 @@ class __TwigTemplate_e60b09d2d3c631ab2c109c0c47b771d91b35d5aec311c61918ac3c9034b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['analytic'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 49
         yield "  ";
-        // line 36
+        // line 50
         yield "  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
   ";
-        // line 38
+        // line 52
         yield "  <link href=\"https://unpkg.com/aos@2.3.1/dist/aos.css\" rel=\"stylesheet\">
+
+
   <script src=\"https://unpkg.com/aos@2.3.1/dist/aos.js\"></script>
+
+";
+        // line 58
+        yield "
+
+
 </head>
 <body>
+
+
 <div id=\"container\">
   <div id=\"alert\"></div>
   ";
-        // line 45
+        // line 68
         yield "  <nav class='navbar shadow-sm'>
   <div class='container-fluid d-flex'>
   <div class='brandlogo'>
   ";
-        // line 49
+        // line 72
         yield "  ";
         if (($context["logo"] ?? null)) {
-            // line 50
+            // line 73
             yield "              <a href=\"";
             yield ($context["home"] ?? null);
             yield "\"><img src=\"";
@@ -197,7 +228,7 @@ class __TwigTemplate_e60b09d2d3c631ab2c109c0c47b771d91b35d5aec311c61918ac3c9034b
             yield "\" class=\"img-fluid\"/></a>
             ";
         } else {
-            // line 52
+            // line 75
             yield "              <h1><a href=\"";
             yield ($context["home"] ?? null);
             yield "\">";
@@ -205,7 +236,7 @@ class __TwigTemplate_e60b09d2d3c631ab2c109c0c47b771d91b35d5aec311c61918ac3c9034b
             yield "</a></h1>
             ";
         }
-        // line 54
+        // line 77
         yield "</div>
 
             <ul class='navbar-nav flex-row align-items-center' id='leftnav'>
@@ -213,7 +244,7 @@ class __TwigTemplate_e60b09d2d3c631ab2c109c0c47b771d91b35d5aec311c61918ac3c9034b
             <li class='nav-item me-3'>
             <div class='search-bar d-lg-block d-md-none d-sm-none text-center py-2 w-90' id='search-firstnav'>
             ";
-        // line 60
+        // line 83
         yield ($context["search"] ?? null);
         yield "
             </div></header></li>
@@ -222,11 +253,11 @@ class __TwigTemplate_e60b09d2d3c631ab2c109c0c47b771d91b35d5aec311c61918ac3c9034b
 
 
             ";
-        // line 67
+        // line 90
         yield "             <li class=\"list-inline-item\">
               <div class=\"dropdown\">
                 <a href=\"";
-        // line 69
+        // line 92
         yield ($context["account"] ?? null);
         yield "\" class=\"dropdown-toggle\" data-bs-toggle=\"dropdown\">
                 <i class=\"fa-solid fa-user\"></i> 
@@ -235,67 +266,67 @@ class __TwigTemplate_e60b09d2d3c631ab2c109c0c47b771d91b35d5aec311c61918ac3c9034b
                 <ul class=\"dropdown-menu dropdown-menu-right\" style='position: absolute; inset: 0px auto auto -60px; margin: 0px; 
                 transform : translate3d(5px, 28px,0px);'>
                   ";
-        // line 75
+        // line 98
         if ( !($context["logged"] ?? null)) {
-            // line 76
+            // line 99
             yield "                    <li><a href=\"";
             yield ($context["register"] ?? null);
             yield "\" class=\"dropdown-item\">";
             yield ($context["text_register"] ?? null);
             yield "</a></li>
                     <li><a href=\"";
-            // line 77
+            // line 100
             yield ($context["login"] ?? null);
             yield "\" class=\"dropdown-item\">";
             yield ($context["text_login"] ?? null);
             yield "</a></li>
                   ";
         } else {
-            // line 79
+            // line 102
             yield "                    <li><a href=\"";
             yield ($context["account"] ?? null);
             yield "\" class=\"dropdown-item\">";
             yield ($context["text_account"] ?? null);
             yield "</a></li>
                     <li><a href=\"";
-            // line 80
+            // line 103
             yield ($context["order"] ?? null);
             yield "\" class=\"dropdown-item\">";
             yield ($context["text_order"] ?? null);
             yield "</a></li>
                     <li><a href=\"";
-            // line 81
+            // line 104
             yield ($context["transaction"] ?? null);
             yield "\" class=\"dropdown-item\">";
             yield ($context["text_transaction"] ?? null);
             yield "</a></li>
                     <li><a href=\"";
-            // line 82
+            // line 105
             yield ($context["download"] ?? null);
             yield "\" class=\"dropdown-item\">";
             yield ($context["text_download"] ?? null);
             yield "</a></li>
                     <li><a href=\"";
-            // line 83
+            // line 106
             yield ($context["logout"] ?? null);
             yield "\" class=\"dropdown-item\">";
             yield ($context["text_logout"] ?? null);
             yield "</a></li>
                   ";
         }
-        // line 85
+        // line 108
         yield "                </ul>
               </div>
             </li>
             <li class=\"list-inline-item\"><a href=\"";
-        // line 88
+        // line 111
         yield ($context["wishlist"] ?? null);
         yield "\" id=\"wishlist-total\" title=\"";
         yield ($context["text_wishlist"] ?? null);
         yield "\"><i class=\"fa-solid fa-heart\"></i> 
             </a></li>
             <li class=\"list-inline-item\"><a href=\"";
-        // line 90
+        // line 113
         yield ($context["shopping_cart"] ?? null);
         yield "\" title=\"";
         yield ($context["text_shopping_cart"] ?? null);
@@ -307,26 +338,27 @@ class __TwigTemplate_e60b09d2d3c631ab2c109c0c47b771d91b35d5aec311c61918ac3c9034b
         <div class='search-bar d-lg-none d-md-d-block  text-center py-2 w-90' >
         
             ";
-        // line 97
+        // line 120
         yield ($context["search"] ?? null);
         yield "
             </div>
 
 
   ";
-        // line 116
+        // line 139
         yield "
 
   ";
-        // line 119
+        // line 142
         yield "  
 <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
   <main>
     ";
-        // line 123
+        // line 146
         yield ($context["menu"] ?? null);
         yield "
+   
 ";
         return; yield '';
     }
@@ -352,7 +384,7 @@ class __TwigTemplate_e60b09d2d3c631ab2c109c0c47b771d91b35d5aec311c61918ac3c9034b
      */
     public function getDebugInfo(): array
     {
-        return array (  328 => 123,  322 => 119,  318 => 116,  311 => 97,  299 => 90,  292 => 88,  287 => 85,  280 => 83,  274 => 82,  268 => 81,  262 => 80,  255 => 79,  248 => 77,  241 => 76,  239 => 75,  230 => 69,  226 => 67,  217 => 60,  209 => 54,  201 => 52,  189 => 50,  186 => 49,  181 => 45,  173 => 38,  170 => 36,  168 => 35,  159 => 33,  154 => 32,  143 => 30,  138 => 29,  129 => 27,  124 => 26,  111 => 24,  106 => 23,  100 => 21,  98 => 20,  93 => 18,  89 => 17,  85 => 16,  80 => 15,  74 => 13,  71 => 12,  65 => 10,  63 => 9,  59 => 8,  55 => 7,  45 => 2,  42 => 1,);
+        return array (  359 => 146,  353 => 142,  349 => 139,  342 => 120,  330 => 113,  323 => 111,  318 => 108,  311 => 106,  305 => 105,  299 => 104,  293 => 103,  286 => 102,  279 => 100,  272 => 99,  270 => 98,  261 => 92,  257 => 90,  248 => 83,  240 => 77,  232 => 75,  220 => 73,  217 => 72,  212 => 68,  201 => 58,  194 => 52,  191 => 50,  189 => 49,  180 => 47,  175 => 46,  164 => 44,  159 => 43,  150 => 41,  145 => 40,  132 => 38,  128 => 37,  124 => 35,  118 => 33,  116 => 32,  111 => 30,  107 => 29,  103 => 28,  98 => 27,  92 => 25,  89 => 24,  83 => 22,  80 => 21,  74 => 19,  72 => 18,  59 => 8,  55 => 7,  45 => 2,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -365,11 +397,23 @@ class __TwigTemplate_e60b09d2d3c631ab2c109c0c47b771d91b35d5aec311c61918ac3c9034b
   <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
   <title>{{ title }}</title>
   <base href=\"{{ base }}\"/>
+  
+
+
+
+
+
+
+
+
   {% if description %}
     <meta name=\"description\" content=\"{{ description }}\"/>
   {% endif %}
   {% if keywords %}
     <meta name=\"keywords\" content=\"{{ keywords }}\"/>
+  {% endif %}
+  {% if global_script %}
+  <script>{{global_script|raw}}</script>
   {% endif %}
   <script src=\"{{ jquery }}\" type=\"text/javascript\"></script>
   <link href=\"{{ bootstrap }}\" type=\"text/css\" rel=\"stylesheet\" media=\"screen\"/>
@@ -379,6 +423,8 @@ class __TwigTemplate_e60b09d2d3c631ab2c109c0c47b771d91b35d5aec311c61918ac3c9034b
   {% if icon %}
     <link rel=\"icon\" href=\"{{ icon }}\" type=\"image/png\">
   {% endif %}
+  
+
   {% for style in styles %}
     <link href=\"{{ style.href }}\" type=\"text/css\" rel=\"{{ style.rel }}\" media=\"{{ style.media }}\"/>
   {% endfor %}
@@ -395,9 +441,18 @@ class __TwigTemplate_e60b09d2d3c631ab2c109c0c47b771d91b35d5aec311c61918ac3c9034b
   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
   {# importing AOS animation  #}
   <link href=\"https://unpkg.com/aos@2.3.1/dist/aos.css\" rel=\"stylesheet\">
+
+
   <script src=\"https://unpkg.com/aos@2.3.1/dist/aos.js\"></script>
+
+{# -------------------------------------------------------------------------------- #}
+
+
+
 </head>
 <body>
+
+
 <div id=\"container\">
   <div id=\"alert\"></div>
   {# navbar #}
@@ -480,6 +535,7 @@ class __TwigTemplate_e60b09d2d3c631ab2c109c0c47b771d91b35d5aec311c61918ac3c9034b
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
   <main>
     {{ menu }}
+   
 ", "catalog/view/template/common/header.twig", "/var/www/html/opencart/upload/catalog/view/template/common/header.twig");
     }
 }

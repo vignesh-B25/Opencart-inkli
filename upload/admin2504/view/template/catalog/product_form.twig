@@ -42,32 +42,153 @@
                   <li class="nav-item"><a href="#language-{{ language.language_id }}" data-bs-toggle="tab" class="nav-link{% if loop.first %} active{% endif %}"><img src="{{ language.image }}" title="{{ language.name }}"/> {{ language.name }}</a></li>
                 {% endfor %}
               </ul>
+              
+       
+              
+           
+         
               <div class="tab-content">
                 {% for language in languages %}
                   <div id="language-{{ language.language_id }}" class="tab-pane{% if loop.first %} active{% endif %}">
                     <div class="row mb-3 required">
+                    
                       <label for="input-name-{{ language.language_id }}" class="col-sm-2 col-form-label">{{ entry_name }}</label>
                       <div class="col-sm-10">
                         <div class="input-group">
-                          <input type="text" name="product_description[{{ language.language_id }}][name]" value="{{ product_description[language.language_id] ? product_description[language.language_id].name }}" placeholder="{{ entry_name }}" id="input-name-{{ language.language_id }}" class="form-control"/>
+                         
+                        {# -------------------------------------------------------------------- #}
+                              {# this is the product input field  #}
+                          <input type="text" name="product_description[{{ language.language_id }}][name]" 
+                          value="{{ product_description[language.language_id] ? product_description[language.language_id].name }}" 
+                          placeholder="{{ entry_name }}" id="input-name-{{ language.language_id }}" class="form-control"/>
+                          {# ---------------------------------------------- #}
+            
+       
+                     
                           {% if master_id %}
                             <div class="input-group-text">
                               <div class="form-check form-switch">
+
+
+
+
+                              
                                 <input type="checkbox" name="override[product_description][{{ language.language_id }}][name]" value="1" id="input-variant-name-{{ language.language_id }}" data-oc-toggle="switch" data-oc-target="#input-name-{{ language.language_id }}" class="form-check-input"{% if override.product_description[language.language_id].name %} checked{% endif %}/> <label for="input-variant-name-{{ language.language_id }}" class="form-check-label"></label>
+                                
                               </div>
                             </div>
                           {% endif %}
                         </div>
+
+
+
+                     
+
+
+
                         <div id="error-name-{{ language.language_id }}" class="invalid-feedback"></div>
                       </div>
                     </div>
+
+                       {# inklidox customization  #}
+                        <div class="form-controller">
+                        <br><br>
+                        <label> Img alt     </label>  
+                        <input type="text" name="product_description[{{language.language_id}}][img_alt]" 
+                        value="{{product_description[language.language_id] ? product_description[language.language_id].img_alt }}"><br><br><br><br>
+                        <label> Img title   
+                         </label> <input type='text' name="product_description[{{language.language_id}}][img_title]"
+                          value="{{product_description[language.language_id] ? product_description[language.language_id].img_title }}">
+                         </div>
+                         
+                     
+                        {# end here #}
+                        {# inklify customization for benefit field #}
+                        
                     <div class="row mb-3">
                       <label for="input-description-{{ language.language_id }}" class="col-sm-2 col-form-label">{{ entry_description }}</label>
                       <div class="col-sm-10">
                         <div class="input-group">
                           <div class="form-control h-100 p-0 border-0 rounded-0">
-                            <textarea name="product_description[{{ language.language_id }}][description]" placeholder="{{ entry_description }}" id="input-description-{{ language.language_id }}" data-oc-toggle="ckeditor" data-lang="{{ ckeditor }}" class="w-100 position-relative">{{ product_description[language.language_id] ? product_description[language.language_id].description }}</textarea>
+                            <textarea name="product_description[{{ language.language_id}}][description]"
+                             placeholder="{{ entry_description }}" id="input-description-{{ language.language_id }}"
+                              data-oc-toggle="ckeditor" data-lang="{{ ckeditor }}" class="w-100 position-relative">{{ product_description[language.language_id] ? product_description[language.language_id].description }}</textarea>
+                          </div><br>
+                          <br>
+                          <br>
+                          <div class="col-12">
+                          <label for="" class="">Enter benefit 1: </label>
+                          <textarea name="product_description[{{language.language_id}}][benefit_1]">{{product_description[language.language_id] 
+                          ? product_description[language.language_id].benefit_1}}</textarea>
                           </div>
+                          <div><label for="">Enter benefit 2:</label>
+                          <textarea name="product_description[{{language.language_id}}][benefit_2]">{{product_description[language.language_id] 
+                          ? product_description[language.language_id].benefit_2}}</textarea></div>
+                         <br> <div>
+                            <label for="">
+                              Enter benefit 3 : 
+                            </label>
+                            <textarea name="product_description[{{language.language_id}}][benefit_3]">
+                            {{product_description[language.language_id].benefit_3}}</textarea>
+                          </div>
+                                  
+
+
+                          {# end here  #}
+
+
+
+
+
+
+
+{# inklidox customization #}
+
+  
+              <div class="form-group">
+    <label class="col-sm-2 control-label" for="input-tap">Enter Title</label>
+    <div class="col-sm-10">
+        <input type="text" name="tap" value="{{ tap is defined ? tap : 'hii' }}"
+
+placeholder="Enter title" id="input-tap" class="form-control"  />
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="input-tap-detail">Details</label>
+    <div class="col-sm-10">
+        <textarea name="tap_detail" id="input-tap-detail" class="form-control">{{ tap_detail }}</textarea>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="input-image-tap">Image</label>
+    <div class="col-sm-10">
+        <img src="{{ image_tap_thumb }}" alt="Tap Image" title="" id="thumb-image-tap" class="img-fluid"/>
+<input type="hidden" name="image_tap" value="{{ image_tap }}" id="input-image-tap"/>
+
+        <button type="button" data-oc-toggle="image" data-oc-target="#input-image-tap" 
+                data-oc-thumb="#thumb-image-tap" class="btn btn-primary rounded-0">
+            <i class="fa-solid fa-pencil"></i> Edit Image
+        </button>
+    </div>
+</div>
+
+                    {# end here #}
+{# 
+ <div>
+       <label>Enter script: </label>
+       <textarea name='global_script'  id="g-script">{{global_script}}</textarea>
+        <button type="button" data-oc-toggle="image" data-oc-target="#input-image" data-oc-thumb="#thumb-image" class="btn btn-primary rounded-0">
+        <i class="fa-solid fa-pencil"></i> {{ button_edit }}</button>
+                    <button type="button" data-oc-toggle="clear" data-oc-target="#input-image" data-oc-thumb="#thumb-image" class="btn btn-warning rounded-0">
+                    <i class="fa-regular fa-trash-can"></i> {{ button_clear }}</button>
+       </div>
+        #}
+
+
+
+
                           {% if master_id %}
                             <div class="input-group-text">
                               <div class="form-check form-switch">
@@ -1164,10 +1285,13 @@
               <fieldset>
                 <legend>{{ text_image }}</legend>
                 <div id="image" class="border rounded d-block" style="max-width: 300px;">
-                  <img src="{{ thumb }}" alt="" title="" id="thumb-image" data-oc-placeholder="{{ placeholder }}" class="img-fluid"/> <input type="hidden" name="image" value="{{ image }}" id="input-image"/>
+                  <img src="{{ thumb }}" alt="" title="" id="thumb-image" data-oc-placeholder="{{ placeholder }}" class="img-fluid"/> 
+                  <input type="hidden" name="image" value="{{ image }}" id="input-image"/>
                   <div class="d-grid">
-                    <button type="button" data-oc-toggle="image" data-oc-target="#input-image" data-oc-thumb="#thumb-image" class="btn btn-primary rounded-0"><i class="fa-solid fa-pencil"></i> {{ button_edit }}</button>
-                    <button type="button" data-oc-toggle="clear" data-oc-target="#input-image" data-oc-thumb="#thumb-image" class="btn btn-warning rounded-0"><i class="fa-regular fa-trash-can"></i> {{ button_clear }}</button>
+                    <button type="button" data-oc-toggle="image" data-oc-target="#input-image" 
+                    data-oc-thumb="#thumb-image" class="btn btn-primary rounded-0"><i class="fa-solid fa-pencil"></i> {{ button_edit }}</button>
+                    <button type="button" data-oc-toggle="clear" data-oc-target="#input-image" data-oc-thumb="#thumb-image" class="btn btn-warning rounded-0">
+                    <i class="fa-regular fa-trash-can"></i> {{ button_clear }}</button>
                     {% if master_id %}
                       <div class="mx-auto w-25">
                         <div class="form-check form-switch">
@@ -1221,8 +1345,13 @@
                     </tfoot>
                   </table>
                 </div>
+
+
+              
               </fieldset>
             </div>
+
+
 
             <div id="tab-reward" class="tab-pane">
               <fieldset>
@@ -1285,6 +1414,7 @@
                     {% for store in stores %}
                       <tr>
                         <td>{{ store.name }}</td>
+                   
                         <td>
                           {% for language in languages %}
                             <div class="input-group">
@@ -1293,10 +1423,21 @@
                             </div>
                             <div id="error-keyword-{{ store.store_id }}-{{ language.language_id }}" class="invalid-feedback"></div>
                           {% endfor %}</td>
+                        
                       </tr>
+                      
+                      
                     {% endfor %}
+                  
                   </tbody>
+                         
+                         <div>
+       <label>Enter script: </label>
+       <textarea name='global_script'  id="g-script">{{global_script}}</textarea>
+       
+       </div>
                 </table>
+           
               </div>
             </div>
 
@@ -1326,9 +1467,11 @@
                       </tr>
                     {% endfor %}
                   </tbody>
+      
                 </table>
               </div>
             </div>
+            
 
             <div id="tab-report" class="tab-pane">
               <fieldset>
@@ -1996,5 +2139,33 @@ $('#report').on('click', '.pagination a', function(e) {
 
     $('#report').load(this.href);
 });
-//--></script>
+//-->
+
+// THIS IS THE SCRIPT FOR TAP SYSTEM 
+
+
+
+
+// vvvvvvvvvvvv
+document.addEventListener('DOMContentLoaded', function () {
+    const imageTapButton = document.querySelector('[data-oc-target="#input-image-tap"]');
+    const imageModal = document.getElementById('modal-image');
+
+    if (imageTapButton) {
+        imageTapButton.addEventListener('click', function () {
+            setTimeout(() => {
+                if (imageModal) {
+                    imageModal.removeAttribute('aria-hidden');
+                    imageModal.removeAttribute('inert');
+                }
+            }, 500);
+        });
+    }
+});
+
+// END HERE 
+console.log('Response:',JSON);  // Logs the entire response
+ 
+
+</script>
 {{ footer }}

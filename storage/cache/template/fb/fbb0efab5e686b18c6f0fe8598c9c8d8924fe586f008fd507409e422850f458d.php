@@ -88,7 +88,7 @@ class __TwigTemplate_7cf92cfe029ef2cb96854bca9bb0b6523dfc32b1656115a7f28512b35dc
             }
             yield "</h1>
   <div class=\"container\">
-  <div id=\"cart\" class=\"row table-responsive\">
+  <div id=\"cart\" class=\"row d-flex table-responsive\">
   
     <table class=\"col-4 table table-bordered\">
       <thead>
@@ -105,7 +105,7 @@ class __TwigTemplate_7cf92cfe029ef2cb96854bca9bb0b6523dfc32b1656115a7f28512b35dc
           
         </tr>
       </thead>
-      <tbody>
+      
         ";
             // line 31
             $context['_parent'] = $context;
@@ -136,7 +136,7 @@ class __TwigTemplate_7cf92cfe029ef2cb96854bca9bb0b6523dfc32b1656115a7f28512b35dc
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 75
-            yield "      </tbody>
+            yield "   
       <tfoot   id=\"checkout-total\">
         ";
             // line 77
@@ -162,7 +162,7 @@ class __TwigTemplate_7cf92cfe029ef2cb96854bca9bb0b6523dfc32b1656115a7f28512b35dc
             // line 83
             yield "      ";
             // line 84
-            yield "    <div class='col-12 d-flex' id=\"cartprd\">
+            yield "    <div class='col-8 d-flex' id=\"cartprd\">
      ";
             // line 85
             $context['_parent'] = $context;
@@ -446,7 +446,7 @@ class __TwigTemplate_7cf92cfe029ef2cb96854bca9bb0b6523dfc32b1656115a7f28512b35dc
    
   <h1>{{ heading_title }}{% if weight %} ({{ weight }}){% endif %}</h1>
   <div class=\"container\">
-  <div id=\"cart\" class=\"row table-responsive\">
+  <div id=\"cart\" class=\"row d-flex table-responsive\">
   
     <table class=\"col-4 table table-bordered\">
       <thead>
@@ -459,7 +459,7 @@ class __TwigTemplate_7cf92cfe029ef2cb96854bca9bb0b6523dfc32b1656115a7f28512b35dc
           
         </tr>
       </thead>
-      <tbody>
+      
         {% for product in products %}
           {# <tr> #}
           
@@ -504,7 +504,7 @@ class __TwigTemplate_7cf92cfe029ef2cb96854bca9bb0b6523dfc32b1656115a7f28512b35dc
             <td class=\"text-end\">{{ product.total }}</td> #}
           {# </tr> #}
         {% endfor %}
-      </tbody>
+   
       <tfoot   id=\"checkout-total\">
         {% for total in totals %}
           <tr>
@@ -513,7 +513,7 @@ class __TwigTemplate_7cf92cfe029ef2cb96854bca9bb0b6523dfc32b1656115a7f28512b35dc
           </tr>
         {% endfor %}
       {# -----------------------design product  #}
-    <div class='col-12 d-flex' id=\"cartprd\">
+    <div class='col-8 d-flex' id=\"cartprd\">
      {% for product in products %}
     <div class='col-md-4 col-sm-12 col-lg-3 text-center' id=\"prdcrd\">
 

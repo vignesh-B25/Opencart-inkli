@@ -23,7 +23,6 @@ class Topic extends \Opencart\System\Engine\Model {
 		$this->db->query("INSERT INTO `" . DB_PREFIX . "topic` SET `sort_order` = '" . (int)$data['sort_order'] . "', `status` = '" . (bool)($data['status'] ?? 0) . "'");
 
 		$topic_id = $this->db->getLastId();
-
 		// Description
 		foreach ($data['topic_description'] as $language_id => $value) {
 			$this->model_cms_topic->addDescription($topic_id, $language_id, $value);

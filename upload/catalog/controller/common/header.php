@@ -15,6 +15,7 @@ class Header extends \Opencart\System\Engine\Controller {
 	 */
 	public function index(): string {
 		// Analytics
+
 		$data['analytics'] = [];
 
 		if (!$this->config->get('config_cookie_id') || (isset($this->request->cookie['policy']) && $this->request->cookie['policy'])) {
@@ -28,7 +29,12 @@ class Header extends \Opencart\System\Engine\Controller {
 				}
 			}
 		}
+		// load the scipt in header.twig 
+		$this->load->model('global_script'); // Load the model
+		$data['global_script'] = $this->model_global_script->getGlobalScript(); // Fetch the script
+		
 
+// end here 
 		$data['lang'] = $this->language->get('code');
 		$data['direction'] = $this->language->get('direction');
 
