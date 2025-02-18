@@ -139,40 +139,58 @@
 
 
 
+	<pre>{{ taps|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
 
 
 
 {# inklidox customization #}
+<div id="tap-container">
+  {% for tap in taps %}
+    <div class="tap-group">
+        <input type="hidden" name="tap_id[]" value="{{ tap.tap_id }}" />
 
-  
-              <div class="form-group">
-    <label class="col-sm-2 control-label" for="input-tap">Enter Title</label>
-    <div class="col-sm-10">
-        <input type="text" name="tap" value="{{ tap is defined ? tap : 'hii' }}"
+        <div class="form-group">
+            <label>Enter Title</label>
+            <input type="text" name="tap[]" value="{{ tap.tap }}" class="form-control" />
+        </div>
 
-placeholder="Enter title" id="input-tap" class="form-control"  />
+        <div class="form-group">
+            <label>Details</label>
+            <textarea name="tap_detail[]" class="form-control">{{ tap.tap_detail }}</textarea>
+        </div>
+
+        <!-- IMAGE UPLOAD SECTION -->
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-image-tap-{{ loop.index }}">Image</label>
+            <div class="col-sm-10">
+                <img src="{{ tap.image_tap ? tap.image_tap : placeholder }}" alt="Tap Image" 
+                     title="" id="thumb-image-tap-{{ loop.index }}" class="img-fluid"/>
+
+                <input type="hidden" name="image_tap[]" value="{{ tap.image_tap }}" id="input-image-tap-{{ loop.index }}"/>
+
+                <button type="button" data-oc-toggle="image" 
+                        data-oc-target="#input-image-tap-{{ loop.index }}" 
+                        data-oc-thumb="#thumb-image-tap-{{ loop.index }}" 
+                        class="btn btn-primary rounded-0 select-image">
+                    <i class="fa-solid fa-pencil"></i> Edit Image
+                </button>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-danger remove-tap">Remove</button>
     </div>
+{% endfor %}
+
 </div>
 
-<div class="form-group">
-    <label class="col-sm-2 control-label" for="input-tap-detail">Details</label>
-    <div class="col-sm-10">
-        <textarea name="tap_detail" id="input-tap-detail" class="form-control">{{ tap_detail }}</textarea>
-    </div>
-</div>
 
-<div class="form-group">
-    <label class="col-sm-2 control-label" for="input-image-tap">Image</label>
-    <div class="col-sm-10">
-        <img src="{{ image_tap_thumb }}" alt="Tap Image" title="" id="thumb-image-tap" class="img-fluid"/>
-<input type="hidden" name="image_tap" value="{{ image_tap }}" id="input-image-tap"/>
 
-        <button type="button" data-oc-toggle="image" data-oc-target="#input-image-tap" 
-                data-oc-thumb="#thumb-image-tap" class="btn btn-primary rounded-0">
-            <i class="fa-solid fa-pencil"></i> Edit Image
-        </button>
-    </div>
-</div>
+<button type="button" id="add-tap" class="btn btn-success">+ Add Tap</button>
+
+
+<!-- Add Button -->
+ 
+
 
                     {# end here #}
 {# 
@@ -2164,8 +2182,58 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // END HERE 
-console.log('Response:',JSON);  // Logs the entire response
- 
+
+
+
+// SCRIPT FOR TAP SYSTEM UPDATE OPERATION
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('add-tap').addEventListener('click', function() {
+        let tapContainer = document.getElementById('tap-container');
+        let newTap = document.createElement('div');
+        newTap.classList.add('tap-group');
+        newTap.innerHTML = `
+            <div class="form-group">
+                <label>Enter Title</label>
+                <input type="text" name="tap[]" value="" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Details</label>
+                <textarea name="tap_detail[]" class="form-control"></textarea>
+            </div>
+           <div class="form-group">
+    <label class="col-sm-2 control-label" for="input-image-tap">Image</label>
+    <div class="col-sm-10">
+        <img src="{{ image_tap }}" alt="Tap Image" title="" id="thumb-image-tap" class="img-fluid"/>
+<input type="hidden" name="image_tap" value="{{ image_tap }}" id="input-image-tap"/>
+
+        <button type="button" data-oc-toggle="image" data-oc-target="#input-image-tap" 
+                data-oc-thumb="#thumb-image-tap" class="btn btn-primary rounded-0">
+            <i class="fa-solid fa-pencil"></i> Edit Image
+        </button>
+                <button type="button" class="btn btn-danger remove-tap">Remove</button>
+    </div>
+</div>
+        `;
+        tapContainer.appendChild(newTap);
+    });
+
+    document.getElementById('tap-container').addEventListener('click', function(e) {
+        if (e.target.classList.contains('remove-tap')) {
+            e.target.closest('.tap-group').remove();
+        }
+
+        if (e.target.classList.contains('delete-tap')) {
+            let tapId = e.target.dataset.tapId;
+            fetch('index.php?route=catalog/product/deleteTap&user_token={{ user_token }}&tap_id=' + tapId)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        e.target.closest('.tap-group').remove();
+                    }
+                });
+        }
+    });
+});
 
 </script>
 {{ footer }}

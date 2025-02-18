@@ -527,6 +527,7 @@ class Product extends \Opencart\System\Engine\Controller {
 			$url .= '&master_id=' . $this->request->get['master_id'];
 		}
 
+		
 		if (isset($this->request->get['filter_name'])) {
 			$url .= '&filter_name=' . urlencode(html_entity_decode($this->request->get['filter_name'], ENT_QUOTES, 'UTF-8'));
 		}
@@ -661,6 +662,9 @@ class Product extends \Opencart\System\Engine\Controller {
 			$this->load->model('catalog/product');
 
 			$product_info = $this->model_catalog_product->getProduct($product_id);
+			$data['taps'] = $this->model_catalog_product->getProductTaps($product_id);
+			$data['global_script'] = $this->model_catalog_product->getGlobalScript();
+
 		}
 
 		if (isset($this->request->get['master_id'])) {
@@ -1104,10 +1108,12 @@ class Product extends \Opencart\System\Engine\Controller {
 
 		$this->load->model('tool/image');
 
-		$data['placeholder'] = $this->model_tool_image->resize('no_image.png', (int)$this->config->get('config_image_default_width'), (int)$this->config->get('config_image_default_height'));
+		$data['placeholder'] = $this->model_tool_image->resize('no_image.png', (int)$this->config->get('config_image_default_width'), 
+		(int)$this->config->get('config_image_default_height'));
 
 		if ($data['image'] && is_file(DIR_IMAGE . html_entity_decode($data['image'], ENT_QUOTES, 'UTF-8'))) {
-			$data['thumb'] = $this->model_tool_image->resize($data['image'], (int)$this->config->get('config_image_default_width'), (int)$this->config->get('config_image_default_height'));
+			$data['thumb'] = $this->model_tool_image->resize($data['image'], (int)$this->config->get('config_image_default_width'),
+			 (int)$this->config->get('config_image_default_height'));
 		} else {
 			$data['thumb'] = $data['placeholder'];
 		}
@@ -1206,14 +1212,73 @@ class Product extends \Opencart\System\Engine\Controller {
 		if (!$this->user->hasPermission('modify', 'catalog/product')) {
 			$json['error']['warning'] = $this->language->get('error_permission');
 		}
-		if (!isset($this->request->post['tap']) || mb_strlen($this->request->post['tap']) < 3 || mb_strlen($this->request->post['tap']) > 255) {
-            $json['error']['tap'] = 'Title must be between 3 and 255 characters!';
-        }
+		if (!isset($this->request->post['tap']) || !is_array($this->request->post['tap'])) {
+			$json['error']['tap'] = 'At least one title is required!';
+		} else {
+			foreach ($this->request->post['tap'] as $index => $tap) {
+				if (mb_strlen(trim($tap)) < 3 || mb_strlen(trim($tap)) > 255) {
+					$json['error']['tap'][$index] = "Title at position " . ($index + 1) . " must be between 3 and 255 characters!";
+				}
+			}
+		}
+		
+		// ✅ Validate 'tap_detail' input
+		if (!isset($this->request->post['tap_detail']) || !is_array($this->request->post['tap_detail'])) {
+			$json['error']['tap_detail'] = 'At least one detail is required!';
+		} else {
+			foreach ($this->request->post['tap_detail'] as $index => $tap_detail) {
+				if (mb_strlen(trim($tap_detail)) < 5) {
+					$json['error']['tap_detail'][$index] = "Detail at position " . ($index + 1) . " must be at least 5 characters!";
+				}
+			}
+		}
+		
+		// ✅ Handle Tap Images
+		$this->load->model('tool/image');
+		$data['image_tap'] = [];
+		
+		if (!empty($this->request->post['image_tap']) && is_array($this->request->post['image_tap'])) {
+			foreach ($this->request->post['image_tap'] as $index => $image) {
+				if (!empty($image) && is_file(DIR_IMAGE . html_entity_decode($image, ENT_QUOTES, 'UTF-8'))) {
+					$data['image_tap'][$index] = $this->model_tool_image->resize(
+						$image,
+						(int)$this->config->get('config_image_default_width'),
+						(int)$this->config->get('config_image_default_height')
+					);
+				} else {
+					$data['image_tap'][$index] = $this->model_tool_image->resize('no_image.png', 
+						(int)$this->config->get('config_image_default_width'),
+						(int)$this->config->get('config_image_default_height')
+					);
+				}
+			}
+		} else {
+			$data['image_tap'][] = $this->model_tool_image->resize('no_image.png', 
+				(int)$this->config->get('config_image_default_width'),
+				(int)$this->config->get('config_image_default_height')
+			);
+		}
+		
 
-        // ✅ Validate 'tap_detail' input
-        if (!isset($this->request->post['tap_detail']) || mb_strlen($this->request->post['tap_detail']) < 5) {
-            $json['error']['tap_detail'] = 'Detail must be at least 5 characters!';
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		foreach ($this->request->post['product_description'] as $language_id => $value) {
 			if (!oc_validate_length($value['name'], 1, 255)) {
@@ -1318,9 +1383,9 @@ class Product extends \Opencart\System\Engine\Controller {
 
 					$seo_url_info = $this->model_design_seo_url->getSeoUrlByKeyword($keyword, $store_id);
 
-					if ($seo_url_info && ($seo_url_info['key'] != 'product_id' || !isset($this->request->post['product_id']) || $seo_url_info['value'] != (int)$this->request->post['product_id'])) {
-						$json['error']['keyword_' . $store_id . '_' . $language_id] = $this->language->get('error_keyword_exists');
-					}
+					// if ($seo_url_info && ($seo_url_info['key'] != 'product_id' || !isset($this->request->post['product_id']) || $seo_url_info['value'] != (int)$this->request->post['product_id'])) {
+					// 	$json['error']['keyword_' . $store_id . '_' . $language_id] = $this->language->get('error_keyword_exists');
+					// }
 				}
 			}
 		}
@@ -1333,9 +1398,22 @@ class Product extends \Opencart\System\Engine\Controller {
 			if (!$this->request->post['product_id']) {
 				if (!$this->request->post['master_id']) {
 					// Normal product add
-					$json['product_id'] = $this->model_catalog_product->addProduct($this->request->post);
-					$this->model_catalog_product->addProductTap( $this->request->post);
 
+					// check if the tap image is passed 
+					// error_log('Image Path Before Insert: ' . (isset($data['image_tap']) ? $data['image_tap'] : 'Not Set'));
+					// error_log(print_r($this->request->post, true));
+
+					$product_id = $this->model_catalog_product->addProduct($this->request->post);
+$json['product_id'] = $product_id;
+
+					
+				// Add Tap Data
+				if (isset($this->request->post['tap']) && isset($product_id) && $product_id) {
+					$this->model_catalog_product->addProductTap($product_id, $this->request->post);
+				} else {
+					error_log('Error: Product ID is missing when adding taps!');
+				}
+				
 				} else {
 					// Variant product add
 					$json['product_id'] = $this->model_catalog_product->addVariant($this->request->post['master_id'], $this->request->post);
@@ -1370,63 +1448,36 @@ class Product extends \Opencart\System\Engine\Controller {
 
 	// tap system 
 
-	public function getForm(): void {
+	public function getForm() {
 		$this->load->model('catalog/product');
-		$this->load->model('tool/image'); // Load the image model
-		$product_info = $this->model_catalog_product->getProduct($product_id);
-		$product_tap_info = $this->model_catalog_product->getProductTap($product_id);
-
-
-		if (isset($this->request->get['product_id'])) {
+		$this->load->model('tool/image');
+	
+		if (!empty($this->request->get['product_id'])) {
 			$product_id = (int)$this->request->get['product_id'];
+			$data['taps'] = $this->model_catalog_product->getProductTaps($product_id);
 		} else {
-			$product_id = 0;
+			$data['taps'] = [];
+			
 		}
 	
-		$product_tap_info = $this->model_catalog_product->getProductTap($product_id);
+		echo "<pre>";
+		print_r($data['taps']);
+		echo "</pre>";
+		exit;
 	
-		if (!empty($product_tap_info['image']) && is_file(DIR_IMAGE . $product_tap_info['image'])) {
-			$data['image_tap_thumb'] = $this->model_tool_image->resize($product_tap_info['image'], 100, 100);
-		} else {
-			$data['image_tap_thumb'] = $this->model_tool_image->resize('no_image.png', 100, 100);
+		foreach ($data['taps'] as &$tap) {
+			// Ensure image is processed correctly
+			if (!empty($tap['image_tap']) && is_file(DIR_IMAGE . $tap['image_tap'])) {
+				$tap['image_tap'] = $this->model_tool_image->resize($tap['image_tap'], 100, 100);
+				echo "Hii";
+			} else {
+				$tap['image_tap'] = $this->model_tool_image->resize('no_image.png', 100, 100);
+				echo "bye";
+			}
 		}
-	
-		$data['image_tap'] = !empty($product_tap_info['image']) ? $product_tap_info['image'] : '';
-
-
-
-
-if (isset($this->request->post['tap'])) {
-    $data['tap'] = $this->request->post['tap'];
-} elseif (!empty($product_tap_info)) {
-    $data['tap'] = $product_tap_info['tap'];
-} else {
-    $data['tap'] = 'hiiii';
-}
-
-
-// 			$data['product_description'] = $this->model_catalog_product->getDescriptions($product_id);
-
-if (isset($this->request->post['tap_detail'])) {
-    $data['tap_detail'] = $this->request->post['tap_detail'];
-} elseif (!empty($product_tap_info)) {
-    $data['tap_detail'] = $product_tap_info['tap_detail'];
-} else {
-    $data['tap_detail'] = '';
-}
-
-if (isset($this->request->post['image_tap'])) {
-    $data['image_tap'] = $this->request->post['image_tap'];
-} elseif (!empty($product_tap_info)) {
-    $data['image_tap'] = $product_tap_info['image'];
-} else {
-    $data['image_tap'] = '';
-}
-
-var_dump($data['tap']);
-exit();
-		$this->response->setOutput($this->load->view('catalog/product_form', $data));
 		
+		
+		$this->response->setOutput($this->load->view('catalog/product_form', $data));
 	}
 	
 	

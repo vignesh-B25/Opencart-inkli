@@ -174,48 +174,86 @@ class Product extends \Opencart\System\Engine\Model {
 
 	
 		// inklidox customization for tap system 
-	public function addProductTap($data) {
-		$this->db->query("INSERT INTO `" . DB_PREFIX . "product` SET 
-			`image` = '" . $this->db->escape($data['image']) . "'");
-	
-		$product_id = $this->db->getLastId();
-	
-		if (!empty($data['tap']) || !empty($data['tap_detail']) || !empty($data['image_tap'])) {
-			$this->db->query("INSERT INTO `" . DB_PREFIX . "product_tap` SET 
-				`product_id` = '" . (int)$product_id . "',
-				`tap` = '" . $this->db->escape($data['tap']) . "',
-				`tap_detail` = '" . $this->db->escape($data['tap_detail']) . "',
-				`image` = '" . $this->db->escape($data['image_tap']) . "'");
+		public function addProductTap($product_id, $data) {
+			if (!empty($data['tap'])) {
+				foreach ($data['tap'] as $index => $tap) {
+					if (!empty($tap) || !empty($data['tap_detail'][$index]) || !empty($data['image_tap'][$index])) {
+						$this->db->query("INSERT INTO `" . DB_PREFIX . "product_tap` (`product_id`, `tap`, `tap_detail`, `image`) 
+							VALUES ('" . (int)$product_id . "', 
+									'" . $this->db->escape($tap) . "', 
+									'" . $this->db->escape($data['tap_detail'][$index]) . "', 
+									'" . $this->db->escape($data['image_tap'][$index]) . "')");
+					}
+				}
+			}
 		}
-	
-		return $product_id;
-	}
-	
-	public function editProductTap($product_id, $data) {
-		$this->db->query("UPDATE `" . DB_PREFIX . "product` SET 
-			`image` = '" . $this->db->escape($data['image']) . "' 
-			WHERE `product_id` = '" . (int)$product_id . "'");
-	
-		$this->db->query("DELETE FROM `" . DB_PREFIX . "product_tap` WHERE `product_id` = '" . (int)$product_id . "'");
-	
-		if (!empty($data['tap']) || !empty($data['tap_detail']) || !empty($data['image_tap'])) {
-			$this->db->query("INSERT INTO `" . DB_PREFIX . "product_tap` SET 
-				`product_id` = '" . (int)$product_id . "',
-				`tap` = '" . $this->db->escape($data['tap']) . "',
-				`tap_detail` = '" . $this->db->escape($data['tap_detail']) . "',
-				`image` = '" . $this->db->escape($data['image_tap']) . "'");
-		}
-	}
-
-	
-
 		
-		public function getProductTap($product_id) {
-			$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "product_tap` WHERE `product_id` = '" . (int)$product_id . "'");
-			return $query->row;
+		public function editProductTap($product_id, $data) {
+			foreach ($data['tap'] as $index => $tap) {
+				if (!empty($tap)) {
+					$tap_detail = isset($data['tap_detail'][$index]) ? $data['tap_detail'][$index] : '';
+					$image_tap = isset($data['image_tap'][$index]) ? $data['image_tap'][$index] : '';
+		
+					// Check if the tap already exists
+					$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "product_tap` 
+						WHERE `product_id` = '" . (int)$product_id . "' AND `tap` = '" . $this->db->escape($tap) . "'");
+		
+					if ($query->num_rows > 0) {
+						// Update existing tap
+						$this->db->query("UPDATE `" . DB_PREFIX . "product_tap` SET 
+							`tap_detail` = '" . $this->db->escape($tap_detail) . "', 
+							`image` = '" . $this->db->escape($image_tap) . "' 
+							WHERE `product_id` = '" . (int)$product_id . "' 
+							AND `tap` = '" . $this->db->escape($tap) . "'");
+					} else {
+						// Insert new tap
+						$this->db->query("INSERT INTO `" . DB_PREFIX . "product_tap` SET 
+							`product_id` = '" . (int)$product_id . "', 
+							`tap` = '" . $this->db->escape($tap) . "', 
+							`tap_detail` = '" . $this->db->escape($tap_detail) . "', 
+							`image` = '" . $this->db->escape($image_tap) . "'");
+					}
+				}
+			}
+		
+			// Remove taps that were deleted from the form
+			$existing_taps = array_map('trim', $data['tap']); // Get current taps in the form
+			$this->db->query("DELETE FROM `" . DB_PREFIX . "product_tap` WHERE `product_id` = '" . (int)$product_id . "' 
+				AND `tap` NOT IN ('" . implode("','", array_map([$this->db, 'escape'], $existing_taps)) . "')");
 		}
+		
+		public function getProductTaps($product_id) {
+			$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "product_tap` WHERE `product_id` = '" . (int)$product_id . "'");
+				
+	         
+			return $query->rows; // Return multiple taps
+		}
+				
+		
+		public function deleteProductTap($tap_id) {
+			$this->db->query("DELETE FROM `" . DB_PREFIX . "product_tap` WHERE `tap_id` = '" . (int)$tap_id . "'");
+		}
+		
 		// end here 
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	/**
 	 * Edit Product
