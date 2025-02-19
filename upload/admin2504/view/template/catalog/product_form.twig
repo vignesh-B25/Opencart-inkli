@@ -2186,12 +2186,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // SCRIPT FOR TAP SYSTEM UPDATE OPERATION
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('add-tap').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function () {
+   let  Uniqueid=100;
+    document.getElementById('add-tap').addEventListener('click', function () {
         let tapContainer = document.getElementById('tap-container');
+        let index = tapContainer.children.length; // Get the number of taps to make unique IDs
+
         let newTap = document.createElement('div');
+        
         newTap.classList.add('tap-group');
+        
         newTap.innerHTML = `
+            <input type="hidden" name="tap_id[]" value="" />
+
             <div class="form-group">
                 <label>Enter Title</label>
                 <input type="text" name="tap[]" value="" class="form-control" />
@@ -2200,24 +2207,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 <label>Details</label>
                 <textarea name="tap_detail[]" class="form-control"></textarea>
             </div>
-           <div class="form-group">
-    <label class="col-sm-2 control-label" for="input-image-tap">Image</label>
-    <div class="col-sm-10">
-        <img src="{{ image_tap }}" alt="Tap Image" title="" id="thumb-image-tap" class="img-fluid"/>
-<input type="hidden" name="image_tap" value="{{ image_tap }}" id="input-image-tap"/>
 
-        <button type="button" data-oc-toggle="image" data-oc-target="#input-image-tap" 
-                data-oc-thumb="#thumb-image-tap" class="btn btn-primary rounded-0">
-            <i class="fa-solid fa-pencil"></i> Edit Image
-        </button>
-                <button type="button" class="btn btn-danger remove-tap">Remove</button>
-    </div>
-</div>
-        `;
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-image-tap-${Uniqueid}">Image</label>
+                <div class="col-sm-10">
+                    <img src="no_image.png" alt="Tap Image" id="thumb-image-tap-${Uniqueid}" class="img-fluid"/>
+                    <input type="hidden" name="image_tap[]" value="" id="input-image-tap-${Uniqueid}"/>
+
+                    <button type="button" data-oc-toggle="image" 
+                            data-oc-target="#input-image-tap-${Uniqueid}" 
+                            data-oc-thumb="#thumb-image-tap-${Uniqueid}" 
+                            class="btn btn-primary rounded-0 select-image">
+                        <i class="fa-solid fa-pencil"></i> Edit Image
+                    </button>
+                </div>
+            </div>
+          
+            <button type="button" class="btn btn-danger remove-tap">Remove</button>
+
+               
+        `
+        
+             ;
+
+            Uniqueid++;
         tapContainer.appendChild(newTap);
+         
     });
 
-    document.getElementById('tap-container').addEventListener('click', function(e) {
+    // Remove tap
+    document.getElementById('tap-container').addEventListener('click', function (e) {
         if (e.target.classList.contains('remove-tap')) {
             e.target.closest('.tap-group').remove();
         }
@@ -2234,6 +2253,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
 
 </script>
 {{ footer }}

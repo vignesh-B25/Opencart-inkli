@@ -1235,7 +1235,7 @@ class Product extends \Opencart\System\Engine\Controller {
 		
 		// ✅ Handle Tap Images
 		$this->load->model('tool/image');
-		$data['image_tap'] = [];
+		// $data['image_tap'] = [];
 		
 		if (!empty($this->request->post['image_tap']) && is_array($this->request->post['image_tap'])) {
 			foreach ($this->request->post['image_tap'] as $index => $image) {
@@ -1465,16 +1465,16 @@ $json['product_id'] = $product_id;
 		echo "</pre>";
 		exit;
 	
-		foreach ($data['taps'] as &$tap) {
-			// Ensure image is processed correctly
-			if (!empty($tap['image_tap']) && is_file(DIR_IMAGE . $tap['image_tap'])) {
-				$tap['image_tap'] = $this->model_tool_image->resize($tap['image_tap'], 100, 100);
-				echo "Hii";
-			} else {
-				$tap['image_tap'] = $this->model_tool_image->resize('no_image.png', 100, 100);
-				echo "bye";
-			}
-		}
+		// foreach ($data['taps'] as &$tap) {
+		// 	// Ensure image is processed correctly
+		// 	if (!empty($tap['image_tap']) && is_file(DIR_IMAGE . $tap['image_tap'])) {
+		// 		$tap['image_tap'] = $this->model_tool_image->resize($tap['image_tap'], 100, 100);
+		// 		echo "Hii";
+		// 	} else {
+		// 		$tap['image_tap'] = $this->model_tool_image->resize('no_image.png', 100, 100);
+		// 		echo "bye";
+		// 	}
+		// }
 		
 		
 		$this->response->setOutput($this->load->view('catalog/product_form', $data));
