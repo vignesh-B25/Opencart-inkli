@@ -1153,3 +1153,1395 @@ Function: require_once
 2025-02-18 12:45:13 - PHP Warning:  Undefined variable $product_id in /var/www/html/opencart/upload/admin2504/controller/catalog/product.php on line 1409
 2025-02-18 12:53:29 - PHP Warning:  Undefined variable $product_id in /var/www/html/opencart/upload/admin2504/controller/catalog/product.php on line 1409
 2025-02-18 12:58:44 - PHP Warning:  Undefined variable $product_id in /var/www/html/opencart/upload/admin2504/controller/catalog/product.php on line 1409
+2025-02-20 09:28:17 - Error: Error: Could not call registry key model_tool_image!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 1249
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: save
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 09:28:19 - Error: Error: Could not call registry key model_tool_image!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 1249
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: save
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 09:28:20 - Error: Error: Could not call registry key model_tool_image!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 1249
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: save
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 09:28:20 - Error: Error: Could not call registry key model_tool_image!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 1249
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: save
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 09:28:33 - Error: Error: Could not call registry key model_tool_image!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 1249
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: save
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 10:43:30 - Error: Error: Could not call registry key model_catalog_product!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 508
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: form
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 10:43:57 - Error: Error: Could not call registry key model_catalog_product!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 508
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: form
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 10:44:29 - Error: Error: Could not call registry key model_catalog_product!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 510
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: form
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 10:44:30 - Error: Error: Could not call registry key model_catalog_product!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 510
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: form
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 10:45:58 - Error: Error: Could not call registry key model_catalog_product!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 664
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: form
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 10:46:16 - Error: Error: Could not call registry key model_catalog_product!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 663
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: form
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 10:46:16 - Error: Error: Could not call registry key model_catalog_product!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 663
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: form
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 10:46:37 - Error: Error: Could not call registry key model_catalog_product!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 682
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: form
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 10:47:03 - Error: Error: Could not call registry key model_catalog_product!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 657
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: form
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-20 10:47:05 - Error: Error: Could not call registry key model_catalog_product!
+File: /var/www/html/opencart/upload/system/engine/controller.php
+Line: 43
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/controller/catalog/product.php
+Line: 657
+Class: Opencart\System\Engine\Controller
+Function: __get
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Catalog\Product
+Function: form
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:02:41 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 25
+2025-02-21 06:02:41 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 25
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:03:03 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 25
+2025-02-21 06:03:03 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 25
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:03:03 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 25
+2025-02-21 06:03:03 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 25
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:03:04 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 25
+2025-02-21 06:03:04 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 25
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:03:04 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 25
+2025-02-21 06:03:04 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 25
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:03:04 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 25
+2025-02-21 06:03:04 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 25
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:18:41 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 20
+2025-02-21 06:18:41 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 20
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:19:31 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 20
+2025-02-21 06:19:31 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 20
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:19:31 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 20
+2025-02-21 06:19:31 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 20
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:19:31 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 20
+2025-02-21 06:19:31 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 20
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:19:41 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 20
+2025-02-21 06:19:41 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 20
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:21:05 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 20
+2025-02-21 06:21:05 - PHP Warning:  Undefined array key "question" in /var/www/html/opencart/upload/admin2504/model/cms/faq.php on line 27
+2025-02-21 06:21:05 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /var/www/html/opencart/upload/admin2504/model/cms/faq.php on line 27
+File: /var/www/html/opencart/upload/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 27
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: editFaq
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 20
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:21:06 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 20
+2025-02-21 06:21:06 - PHP Warning:  Undefined array key "question" in /var/www/html/opencart/upload/admin2504/model/cms/faq.php on line 27
+2025-02-21 06:21:06 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /var/www/html/opencart/upload/admin2504/model/cms/faq.php on line 27
+File: /var/www/html/opencart/upload/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 27
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: editFaq
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 20
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:21:06 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 20
+2025-02-21 06:21:06 - PHP Warning:  Undefined array key "question" in /var/www/html/opencart/upload/admin2504/model/cms/faq.php on line 27
+2025-02-21 06:21:06 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /var/www/html/opencart/upload/admin2504/model/cms/faq.php on line 27
+File: /var/www/html/opencart/upload/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 27
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: editFaq
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 20
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:21:06 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 20
+2025-02-21 06:21:06 - PHP Warning:  Undefined array key "question" in /var/www/html/opencart/upload/admin2504/model/cms/faq.php on line 27
+2025-02-21 06:21:06 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /var/www/html/opencart/upload/admin2504/model/cms/faq.php on line 27
+File: /var/www/html/opencart/upload/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 27
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: editFaq
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 20
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:23:28 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:23:29 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:23:33 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:38 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:39 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:40 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:40 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:41 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:41 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:41 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:41 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:41 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:42 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:42 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:42 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:42 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:42 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:43 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:43 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:43 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:43 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:46 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:25:59 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:26:12 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 11
+2025-02-21 06:26:42 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 14
+2025-02-21 06:26:42 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 14
+2025-02-21 06:26:42 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 14
+2025-02-21 06:26:43 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 14
+2025-02-21 06:26:43 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 14
+2025-02-21 06:26:44 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 14
+2025-02-21 06:26:46 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 14
+2025-02-21 06:26:48 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 14
+2025-02-21 06:26:51 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 14
+2025-02-21 06:27:04 - PHP Warning:  Undefined array key "faq_id" in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 14
+2025-02-21 06:28:23 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 43
+2025-02-21 06:28:23 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 43
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:28:24 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 43
+2025-02-21 06:28:24 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 43
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:28:24 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 43
+2025-02-21 06:28:24 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 43
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:28:24 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 43
+2025-02-21 06:28:24 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 43
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:28:24 - PHP Warning:  Undefined variable $faq_id in /var/www/html/opencart/upload/admin2504/controller/cms/faq.php on line 43
+2025-02-21 06:28:24 - Error: Opencart\Admin\Model\Cms\Faq::getFaq(): Argument #1 ($faq_id) must be of type int, null given, called in /var/www/html/opencart/upload/system/engine/loader.php on line 343
+File: /var/www/html/opencart/upload/admin2504/model/cms/faq.php
+Line: 40
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Cms\Faq
+Function: getFaq
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 43
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 4
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:30:40 - Error: Call to undefined function Opencart\Admin\Controller\Cms\form()
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 29
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:30:40 - Error: Call to undefined function Opencart\Admin\Controller\Cms\form()
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 29
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:30:41 - Error: Call to undefined function Opencart\Admin\Controller\Cms\form()
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 29
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:31:19 - Error: Call to undefined function Opencart\Admin\Controller\Cms\form()
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 84
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:31:19 - Error: Call to undefined function Opencart\Admin\Controller\Cms\form()
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 84
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:31:20 - Error: Call to undefined function Opencart\Admin\Controller\Cms\form()
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 84
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:31:20 - Error: Call to undefined function Opencart\Admin\Controller\Cms\form()
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 84
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once
+2025-02-21 06:31:21 - Error: Call to undefined function Opencart\Admin\Controller\Cms\form()
+File: /var/www/html/opencart/upload/admin2504/controller/cms/faq.php
+Line: 84
+
+Backtrace: 0
+File: /var/www/html/opencart/upload/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Cms\Faq
+Function: index
+
+Backtrace: 1
+File: /var/www/html/opencart/upload/system/framework.php
+Line: 256
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 2
+File: /var/www/html/opencart/upload/admin2504/index.php
+Line: 20
+Function: require_once

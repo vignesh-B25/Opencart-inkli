@@ -92,32 +92,83 @@
 
                        {# inklidox customization  #}
                         <div class="form-controller">
-                        <br><br>
-                        <label> Img alt     </label>  
+                         <div class="row mb-3 required">
+                        <label class="col-sm-2 col-form-label"> Img alt </label>  
+                           <div class="col-sm-10">
                         <input type="text" name="product_description[{{language.language_id}}][img_alt]" 
-                        value="{{product_description[language.language_id] ? product_description[language.language_id].img_alt }}"><br><br><br><br>
-                        <label> Img title   
-                         </label> <input type='text' name="product_description[{{language.language_id}}][img_title]"
-                          value="{{product_description[language.language_id] ? product_description[language.language_id].img_title }}">
+                        value="{{product_description[language.language_id] ? product_description[language.language_id].img_alt }}" class="col-10 form-control" />
+                           </div>
                          </div>
-                         
+                           <div class="row mb-3 required">
+                        <label class="col-sm-2 col-form-label"> Img title </label> 
+                           <div class="col-sm-10">
+                        <input type='text' name="product_description[{{language.language_id}}][img_title]"
+                        value="{{product_description[language.language_id] ? product_description[language.language_id].img_title }}" class="col-10 form-control" />
+                         </div>
+                        </div>     
+                         </div>                    
                      
                         {# end here #}
                         {# inklify customization for benefit field #}
                         
                     <div class="row mb-3">
+                    
                       <label for="input-description-{{ language.language_id }}" class="col-sm-2 col-form-label">{{ entry_description }}</label>
                       <div class="col-sm-10">
                         <div class="input-group">
                           <div class="form-control h-100 p-0 border-0 rounded-0">
                             <textarea name="product_description[{{ language.language_id}}][description]"
                              placeholder="{{ entry_description }}" id="input-description-{{ language.language_id }}"
-                              data-oc-toggle="ckeditor" data-lang="{{ ckeditor }}" class="w-100 position-relative">{{ product_description[language.language_id] ? product_description[language.language_id].description }}</textarea>
-                          </div><br>
-                          <br>
-                          <br>
-                          <div class="col-12">
+                              data-oc-toggle="ckeditor" data-lang="{{ ckeditor }}" class="w-100 position-relative">
+                              {{ product_description[language.language_id] ? product_description[language.language_id].description }}</textarea>
+                          
+                        </div>
+               <div class="col-12">         
+
+<label for="" class="fw-bold m-3"> Enter Benefit 1</label>
+ <div class="form-control h-100 p-0 border-0 rounded-0 ">
+                            <textarea name="product_description[{{language.language_id}}][benefit_1]"
+                             placeholder="{{ entry_description }}" id="input-description-{{ language.language_id }}"
+                              data-oc-toggle="ckeditor" data-lang="{{ ckeditor }}" class="w-100 position-relative">
+                             {{product_description[language.language_id] 
+                          ? product_description[language.language_id].benefit_1}}</textarea>
+                          </div>
+                          </div>
+
+
+                  <div class="col-12">
+                          <label for="" class="fw-bold m-3">Enter Benefit 2</label>
+                     
+    <div class="form-control h-100 p-0 border-0 rounded-0">
+                            <textarea name="product_description[{{language.language_id}}][benefit_2]"
+                             placeholder="{{ entry_description }}" id="input-description-{{ language.language_id }}"
+                              data-oc-toggle="ckeditor" data-lang="{{ ckeditor }}" class="w-100 position-relative">
+                            {{product_description[language.language_id] 
+                          ? product_description[language.language_id].benefit_2}}</textarea>
+                          </div>
+
+                  </div>
+    
+
+    <div class="col-12">
+                    <label for="" class="fw-bold m-3">Enter Benefit 3</label>
+                         
+       <div class="form-control h-100 p-0 border-0 rounded-0">
+                            <textarea name="product_description[{{language.language_id}}][benefit_3]"
+                             placeholder="{{ entry_description }}" id="input-description-{{ language.language_id }}"
+                              data-oc-toggle="ckeditor" data-lang="{{ ckeditor }}" class="w-100 position-relative">
+                        {{product_description[language.language_id] 
+                          ? product_description[language.language_id].benefit_3}}</textarea>
+                          </div>
+
+                      </div>
+
+
+                    
+                          {# <div class="col-12">
+
                           <label for="" class="">Enter benefit 1: </label>
+                          
                           <textarea name="product_description[{{language.language_id}}][benefit_1]">{{product_description[language.language_id] 
                           ? product_description[language.language_id].benefit_1}}</textarea>
                           </div>
@@ -130,7 +181,7 @@
                             </label>
                             <textarea name="product_description[{{language.language_id}}][benefit_3]">
                             {{product_description[language.language_id].benefit_3}}</textarea>
-                          </div>
+                          </div> #}
                                   
 
 
@@ -139,14 +190,15 @@
 
 
 
-	<pre>{{ taps|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
 
-
-
+<div class="tapbtn">
+<button type="button" id="add-tap" class="btn btn-success">+ Add Tap</button>
+</div>
 {# inklidox customization #}
 <div id="tap-container">
   {% for tap in taps %}
-    <div class="tap-group">
+    <div class="col-sm-12  col-lg-3 tap-group ">
+   
         <input type="hidden" name="tap_id[]" value="{{ tap.tap_id }}" />
 
         <div class="form-group">
@@ -160,32 +212,35 @@
         </div>
 
         <!-- IMAGE UPLOAD SECTION -->
-        <div class="form-group">
+        <div class="form-group ">
             <label class="col-sm-2 control-label" for="input-image-tap-{{ loop.index }}">Image</label>
-            <div class="col-sm-10">
+            <div class="col-sm-12 text-center">
                 <img src="{{ tap.image_tap ? tap.image_tap : placeholder }}" alt="Tap Image" 
                      title="" id="thumb-image-tap-{{ loop.index }}" class="img-fluid"/>
 
                 <input type="hidden" name="image_tap[]" value="{{ tap.image_tap }}" id="input-image-tap-{{ loop.index }}"/>
-
+              <div class="btn-group">
                 <button type="button" data-oc-toggle="image" 
                         data-oc-target="#input-image-tap-{{ loop.index }}" 
                         data-oc-thumb="#thumb-image-tap-{{ loop.index }}" 
                         class="btn btn-primary rounded-0 select-image">
                     <i class="fa-solid fa-pencil"></i> Edit Image
                 </button>
-            </div>
-        </div>
+           
 
         <button type="button" class="btn btn-danger remove-tap">Remove</button>
+              </div>
+         </div>
+        </div>
     </div>
+    
 {% endfor %}
 
 </div>
 
 
+	<pre>{{ taps|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
 
-<button type="button" id="add-tap" class="btn btn-success">+ Add Tap</button>
 
 
 <!-- Add Button -->
@@ -1449,9 +1504,9 @@
                   
                   </tbody>
                          
-                         <div>
-       <label>Enter script: </label>
-       <textarea name='global_script'  id="g-script">{{global_script}}</textarea>
+                         <div class="col-12 d-flex">
+       <label class="col-3 fw-bold">Enter script: </label>
+       <textarea name='global_script'  id="g-script" class="col-9 mb-5">{{global_script}}</textarea>
        
        </div>
                 </table>
@@ -2198,8 +2253,8 @@ document.addEventListener('DOMContentLoaded', function () {
         
         newTap.innerHTML = `
             <input type="hidden" name="tap_id[]" value="" />
-
-            <div class="form-group">
+                       <div class='apd-tap'>
+            <div class="form-group ">
                 <label>Enter Title</label>
                 <input type="text" name="tap[]" value="" class="form-control" />
             </div>
@@ -2211,21 +2266,25 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-image-tap-${Uniqueid}">Image</label>
                 <div class="col-sm-10">
-                    <img src="no_image.png" alt="Tap Image" id="thumb-image-tap-${Uniqueid}" class="img-fluid"/>
+                    <img src="{{placeholder}}" alt="Tap Image" id="thumb-image-tap-${Uniqueid}" class="img-fluid"/>
                     <input type="hidden" name="image_tap[]" value="" id="input-image-tap-${Uniqueid}"/>
-
+                    </div>
+                    <div class="btn-group">
                     <button type="button" data-oc-toggle="image" 
                             data-oc-target="#input-image-tap-${Uniqueid}" 
                             data-oc-thumb="#thumb-image-tap-${Uniqueid}" 
                             class="btn btn-primary rounded-0 select-image">
                         <i class="fa-solid fa-pencil"></i> Edit Image
                     </button>
-                </div>
-            </div>
+             
+            
           
             <button type="button" class="btn btn-danger remove-tap">Remove</button>
 
-               
+               </div>
+               </div>
+                  </div>
+            
         `
         
              ;

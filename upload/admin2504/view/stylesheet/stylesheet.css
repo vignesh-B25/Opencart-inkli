@@ -37,6 +37,67 @@ a {
 .container-fluid {
     padding: 0 20px;
 }
+/* inklidox styling  */
+
+
+.tapbtn {
+    max-height: 50px !important;
+    width: 100%;
+    text-align: end;
+}
+.tapbtn #add-tap{
+    position: sticky;
+     background-color:black;
+    border-radius: 20px;
+    border: none;
+    width: 10%;
+    margin: 20px;
+/*    
+   box-shadow: 4px -2px 4px 4px rgba(0, 0, 0, .9); */
+
+}
+
+
+
+
+#tap-container .tap-group{
+    background-color: #f7f7f7;
+    padding: 15px;
+    display: inline-block;
+    max-width: 100%;
+    margin: 15px;
+    color:black;
+     font-size: 15px;
+     font-weight: bold;
+    border-radius: 5px;
+    font-family: sans-serif;
+    /* box-shadow: 3px 4px 8px 8px rgba(0,0,0,0.3); */
+    
+}
+#tap-container .tap-group img{
+    height: 280px;
+}
+
+
+
+
+#tap-container .tap-group .btn-group {
+   gap: 53px;
+   justify-content: space-around;
+   display: flex;
+   width: 100%;
+
+   
+}
+#tap-container .tap-group .btn-group button{
+    width: 35%;
+    border-radius: 25px !important;
+    /* box-shadow: 3px 2px 4px 4px rgba(0, 0, 0, .9); */
+    
+}
+
+
+
 
 #alert {
     z-index: 9999;

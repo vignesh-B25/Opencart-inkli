@@ -30,7 +30,7 @@
                     <td>{{ faq.sort_order }}</td>
                     <td>{{ faq.status ? 'Enabled' : 'Disabled' }}</td>
                     <td>
-                 <a href="{{ faq.edit }}" class="btn btn-secondary">Edit</a>
+                 <a href="{{ edit ~ '&faq_id=' ~ faq.faq_id ~ '&user_token=' ~ user_token }}"class="btn btn-secondary">Edit</a>
 
                        
                     </td>

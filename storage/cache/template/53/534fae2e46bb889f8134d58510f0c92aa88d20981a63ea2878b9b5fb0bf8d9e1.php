@@ -14,8 +14,8 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* admin2504/view/template/localisation/language.twig */
-class __TwigTemplate_aab6f4c19d8aba22ee4de84ff59ef64800e51682ce8bbabc8a54f561e254d59d extends Template
+/* admin2504/view/template/user/user_group.twig */
+class __TwigTemplate_8fb46d4371e889a045e3113b6eb00f7b7fe5838eb6d466ac578c9779dac8be7a extends Template
 {
     private Source $source;
     /**
@@ -51,7 +51,7 @@ class __TwigTemplate_aab6f4c19d8aba22ee4de84ff59ef64800e51682ce8bbabc8a54f561e25
         yield "\" data-bs-toggle=\"tooltip\" title=\"";
         yield ($context["button_add"] ?? null);
         yield "\" class=\"btn btn-primary\"><i class=\"fa-solid fa-plus\"></i></a>
-        <button type=\"submit\" form=\"form-language\" formaction=\"";
+        <button type=\"submit\" form=\"form-user-group\" formaction=\"";
         // line 6
         yield ($context["delete"] ?? null);
         yield "\" data-bs-toggle=\"tooltip\" title=\"";
@@ -91,7 +91,7 @@ class __TwigTemplate_aab6f4c19d8aba22ee4de84ff59ef64800e51682ce8bbabc8a54f561e25
         // line 18
         yield ($context["text_list"] ?? null);
         yield "</div>
-      <div id=\"language\" class=\"card-body\">";
+      <div id=\"user-group\" class=\"card-body\">";
         // line 19
         yield ($context["list"] ?? null);
         yield "</div>
@@ -99,17 +99,15 @@ class __TwigTemplate_aab6f4c19d8aba22ee4de84ff59ef64800e51682ce8bbabc8a54f561e25
   </div>
 </div>
 <script type=\"text/javascript\"><!--
-\$('#language').on('click', 'thead a, .pagination a', function(e) {
+\$('#user-group').on('click', 'thead a, .pagination a', function(e) {
     e.preventDefault();
 
-    \$('#language').load(this.href);
+    \$('#user-group').load(this.href);
 });
 //--></script>
 ";
         // line 30
         yield ($context["footer"] ?? null);
-        yield "
-";
         return; yield '';
     }
 
@@ -118,7 +116,7 @@ class __TwigTemplate_aab6f4c19d8aba22ee4de84ff59ef64800e51682ce8bbabc8a54f561e25
      */
     public function getTemplateName(): string
     {
-        return "admin2504/view/template/localisation/language.twig";
+        return "admin2504/view/template/user/user_group.twig";
     }
 
     /**
@@ -144,7 +142,7 @@ class __TwigTemplate_aab6f4c19d8aba22ee4de84ff59ef64800e51682ce8bbabc8a54f561e25
   <div class=\"page-header\">
     <div class=\"container-fluid\">
       <div class=\"float-end\"><a href=\"{{ add }}\" data-bs-toggle=\"tooltip\" title=\"{{ button_add }}\" class=\"btn btn-primary\"><i class=\"fa-solid fa-plus\"></i></a>
-        <button type=\"submit\" form=\"form-language\" formaction=\"{{ delete }}\" data-bs-toggle=\"tooltip\" title=\"{{ button_delete }}\" onclick=\"return confirm('{{ text_confirm }}');\" class=\"btn btn-danger\"><i class=\"fa-regular fa-trash-can\"></i></button>
+        <button type=\"submit\" form=\"form-user-group\" formaction=\"{{ delete }}\" data-bs-toggle=\"tooltip\" title=\"{{ button_delete }}\" onclick=\"return confirm('{{ text_confirm }}');\" class=\"btn btn-danger\"><i class=\"fa-regular fa-trash-can\"></i></button>
       </div>
       <h1>{{ heading_title }}</h1>
       <ol class=\"breadcrumb\">
@@ -157,18 +155,17 @@ class __TwigTemplate_aab6f4c19d8aba22ee4de84ff59ef64800e51682ce8bbabc8a54f561e25
   <div class=\"container-fluid\">
     <div class=\"card\">
       <div class=\"card-header\"><i class=\"fa-solid fa-list\"></i> {{ text_list }}</div>
-      <div id=\"language\" class=\"card-body\">{{ list }}</div>
+      <div id=\"user-group\" class=\"card-body\">{{ list }}</div>
     </div>
   </div>
 </div>
 <script type=\"text/javascript\"><!--
-\$('#language').on('click', 'thead a, .pagination a', function(e) {
+\$('#user-group').on('click', 'thead a, .pagination a', function(e) {
     e.preventDefault();
 
-    \$('#language').load(this.href);
+    \$('#user-group').load(this.href);
 });
 //--></script>
-{{ footer }}
-", "admin2504/view/template/localisation/language.twig", "/var/www/html/opencart/upload/admin2504/view/template/localisation/language.twig");
+{{ footer }}", "admin2504/view/template/user/user_group.twig", "/var/www/html/opencart/upload/admin2504/view/template/user/user_group.twig");
     }
 }

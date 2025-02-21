@@ -501,12 +501,13 @@ class Product extends \Opencart\System\Engine\Controller {
 		$this->load->language('catalog/product');
 
 		$this->document->setTitle($this->language->get('heading_title'));
+		
 
 		$this->document->addScript('view/javascript/ckeditor/ckeditor.js');
 		$this->document->addScript('view/javascript/ckeditor/adapters/jquery.js');
-
+          
 		$data['text_form'] = !isset($this->request->get['product_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
-
+           
 		$data['error_upload_size'] = sprintf($this->language->get('error_upload_size'), $this->config->get('config_file_max_size'));
 
 		$data['config_file_max_size'] = ((int)$this->config->get('config_file_max_size') * 1024 * 1024);
@@ -525,6 +526,7 @@ class Product extends \Opencart\System\Engine\Controller {
 
 		if (isset($this->request->get['master_id'])) {
 			$url .= '&master_id=' . $this->request->get['master_id'];
+			
 		}
 
 		
@@ -652,10 +654,13 @@ class Product extends \Opencart\System\Engine\Controller {
 		// If the product_id is the master_id, we need to get the variant info
 		if (isset($this->request->get['product_id'])) {
 			$product_id = (int)$this->request->get['product_id'];
+			
 		} elseif (isset($this->request->get['master_id'])) {
 			$product_id = (int)$this->request->get['master_id'];
+			
 		} else {
 			$product_id = 0;
+			
 		}
 
 		if ($product_id) {
@@ -664,6 +669,7 @@ class Product extends \Opencart\System\Engine\Controller {
 			$product_info = $this->model_catalog_product->getProduct($product_id);
 			$data['taps'] = $this->model_catalog_product->getProductTaps($product_id);
 			$data['global_script'] = $this->model_catalog_product->getGlobalScript();
+			
 
 		}
 
@@ -673,6 +679,7 @@ class Product extends \Opencart\System\Engine\Controller {
 			$data['master_id'] = $product_info['master_id'];
 		} else {
 			$data['master_id'] = 0;
+			
 		}
 
 		$this->load->model('localisation/language');
@@ -1234,30 +1241,20 @@ class Product extends \Opencart\System\Engine\Controller {
 		}
 		
 		// ✅ Handle Tap Images
-		$this->load->model('tool/image');
+		// $this->load->model('tool/image');
 		// $data['image_tap'] = [];
 		
-		if (!empty($this->request->post['image_tap']) && is_array($this->request->post['image_tap'])) {
-			foreach ($this->request->post['image_tap'] as $index => $image) {
-				if (!empty($image) && is_file(DIR_IMAGE . html_entity_decode($image, ENT_QUOTES, 'UTF-8'))) {
-					$data['image_tap'][$index] = $this->model_tool_image->resize(
-						$image,
-						(int)$this->config->get('config_image_default_width'),
-						(int)$this->config->get('config_image_default_height')
-					);
-				} else {
-					$data['image_tap'][$index] = $this->model_tool_image->resize('no_image.png', 
-						(int)$this->config->get('config_image_default_width'),
-						(int)$this->config->get('config_image_default_height')
-					);
-				}
-			}
-		} else {
-			$data['image_tap'][] = $this->model_tool_image->resize('no_image.png', 
-				(int)$this->config->get('config_image_default_width'),
-				(int)$this->config->get('config_image_default_height')
-			);
-		}
+		// if (!empty($this->request->post['image_tap']) && is_array($this->request->post['image_tap'])) {
+		// 	foreach ($this->request->post['image_tap'] as $index => $image) {
+		// 		if (!empty($images) && is_file(DIR_IMAGE . html_entity_decode($images, ENT_QUOTES, 'UTF-8'))) {
+		// 			$data['image_tap'][$index] = $this->model_tool_image->resize(
+		// 				$images,
+		// 				(int)$this->config->get('config_image_default_width'),
+		// 				(int)$this->config->get('config_image_default_height')
+		// 			);
+		// 		} 
+		// 	}
+		// } 
 		
 
 
@@ -1404,16 +1401,17 @@ class Product extends \Opencart\System\Engine\Controller {
 					// error_log(print_r($this->request->post, true));
 
 					$product_id = $this->model_catalog_product->addProduct($this->request->post);
+					
 $json['product_id'] = $product_id;
 
-					
+$data['global_script'] = $this->model_catalog_product->getGlobalScript();
 				// Add Tap Data
 				if (isset($this->request->post['tap']) && isset($product_id) && $product_id) {
 					$this->model_catalog_product->addProductTap($product_id, $this->request->post);
 				} else {
 					error_log('Error: Product ID is missing when adding taps!');
 				}
-				
+				                                                                   
 				} else {
 					// Variant product add
 					$json['product_id'] = $this->model_catalog_product->addVariant($this->request->post['master_id'], $this->request->post);

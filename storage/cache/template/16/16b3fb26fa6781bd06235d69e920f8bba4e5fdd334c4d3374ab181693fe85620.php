@@ -101,8 +101,8 @@ class __TwigTemplate_ee0621311110b668eac43f3be5e08641900ada85b2d1b34e9bc9fb7549e
                     <td>
                  <a href=\"";
             // line 33
-            yield CoreExtension::getAttribute($this->env, $this->source, $context["faq"], "edit", [], "any", false, false, false, 33);
-            yield "\" class=\"btn btn-secondary\">Edit</a>
+            yield ((((($context["edit"] ?? null) . "&faq_id=") . CoreExtension::getAttribute($this->env, $this->source, $context["faq"], "faq_id", [], "any", false, false, false, 33)) . "&user_token=") . ($context["user_token"] ?? null));
+            yield "\"class=\"btn btn-secondary\">Edit</a>
 
                        
                     </td>
@@ -188,7 +188,7 @@ class __TwigTemplate_ee0621311110b668eac43f3be5e08641900ada85b2d1b34e9bc9fb7549e
                     <td>{{ faq.sort_order }}</td>
                     <td>{{ faq.status ? 'Enabled' : 'Disabled' }}</td>
                     <td>
-                 <a href=\"{{ faq.edit }}\" class=\"btn btn-secondary\">Edit</a>
+                 <a href=\"{{ edit ~ '&faq_id=' ~ faq.faq_id ~ '&user_token=' ~ user_token }}\"class=\"btn btn-secondary\">Edit</a>
 
                        
                     </td>

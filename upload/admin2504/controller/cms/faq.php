@@ -6,22 +6,33 @@ class Faq extends \Opencart\System\Engine\Controller {
     public function index(): void {
         $this->load->language('cms/faq');
         $this->document->setTitle($this->language->get('heading_title'));
-    
+         
         $this->load->model('cms/faq');
-    
+      
         // Fetch FAQs from the model
         $data['faqs'] = $this->model_cms_faq->getFaqs();
-    
+        
+
+
+
+
+       
+
+
+
         // Debugging - Log data to error log
         error_log('FAQs data from model in index: ' . print_r($data['faqs'], true));
     
         $data['add'] = $this->url->link('cms/faq.form', 'user_token=' . $this->session->data['user_token']);
         $data['delete'] = $this->url->link('cms/faq.delete', 'user_token=' . $this->session->data['user_token']);
+       
+        $data['edit'] = $this->url->link('cms/faq.form',   'user_token=' . $this->session->data['user_token']);
         $data['user_token'] = $this->session->data['user_token'];
-    
+        
         $data['header'] = $this->load->controller('common/header');
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
+        
     
         // Pass data to view
         $this->response->setOutput($this->load->view('cms/faq', $data));
@@ -52,11 +63,15 @@ class Faq extends \Opencart\System\Engine\Controller {
         $this->load->language('cms/faq');
         $this->document->setTitle($this->language->get('heading_title'));
         $this->load->model('cms/faq');
+        
 
         // Load the FAQ data if editing
         if (isset($this->request->get['faq_id']) && !empty($this->request->get['faq_id'])) {
             $faq_id = (int)$this->request->get['faq_id'];
+         
             $data['faq'] = $this->model_cms_faq->getFaq($faq_id);
+            
+            
         } else {
             $data['faq'] = [
                 'faq_id'     => 0,
@@ -69,9 +84,11 @@ class Faq extends \Opencart\System\Engine\Controller {
 
         $data['save'] = $this->url->link('cms/faq.save', 'user_token=' . $this->session->data['user_token']);
         $data['back'] = $this->url->link('cms/faq', 'user_token=' . $this->session->data['user_token']);
+    
         $data['user_token'] = $this->session->data['user_token'];
 
         $this->response->setOutput($this->load->view('cms/faq_form', $data));
+        
     }
 
     public function save(): void {
